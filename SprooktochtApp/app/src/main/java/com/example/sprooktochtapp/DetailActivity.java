@@ -25,6 +25,6 @@ public class DetailActivity extends AppCompatActivity {
 
         fairyTaleName.setText(selectedFairyTale.getNameOfTale());
         fairyTaleDescription.setText(selectedFairyTale.getTaleDescription());
-//        fairyTaleImage.setImageDrawable(ResourcesCompat.getDrawable(getResources(), selectedFairyTale.getImageOfTaleId(), null));
+        fairyTaleImage.setImageDrawable(ResourcesCompat.getDrawable(getResources(), selectedFairyTale.getImageOfTaleId(), null));
     }
 }
