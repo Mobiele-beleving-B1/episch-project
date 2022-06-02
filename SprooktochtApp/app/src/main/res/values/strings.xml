@@ -3,4 +3,8 @@
     <string name="beginButton">Begin</string>
     <string name="sprooktocht">SprookTocht</string>
     <string name="voer_uw_naam_in">Voer uw naam in</string>
+    <string name="sprookje_details_foto">Sprookje details foto</string>
+    <string name="voer_hier_sprookjes_info_in">Voer hier sprookjes info in</string>
+    <string name="sprookjes_details">Sprookjes details</string>
+    <string name="sprookjes_naam">Sprookjes naam</string>
 </resources>
