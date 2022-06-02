@@ -7,4 +7,5 @@
     <string name="voer_hier_sprookjes_info_in">Voer hier sprookjes info in</string>
     <string name="sprookjes_details">Sprookjes details</string>
     <string name="sprookjes_naam">Sprookjes naam</string>
+    <string name="placeholder_tutorial_text">placeholder tutorial text</string>
 </resources>
