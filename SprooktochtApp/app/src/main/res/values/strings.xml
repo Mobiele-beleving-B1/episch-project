@@ -8,4 +8,9 @@
     <string name="sprookjes_details">Sprookjes details</string>
     <string name="sprookjes_naam">Sprookjes naam</string>
     <string name="placeholder_tutorial_text">placeholder tutorial text</string>
+    <string name="ga_naar">Ga naar:</string>
+    <string name="activesprookje">ActiveSprookje</string>
+    <string name="voortgang">Voortgang:</string>
+    <string name="plattegrond">Plattegrond</string>
+    <string name="throphyimage">throphyImage</string>
 </resources>

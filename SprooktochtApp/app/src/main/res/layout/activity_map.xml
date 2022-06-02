@@ -6,4 +6,74 @@
     android:layout_height="match_parent"
     tools:context=".MapActivity">
 
+    <ImageView
+        android:id="@+id/plattegrondImage"
+        android:layout_width="411dp"
+        android:layout_height="367dp"
+        android:layout_marginTop="24dp"
+        android:contentDescription="@string/plattegrond"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pointsBar"
+        tools:ignore="ImageContrastCheck"
+        tools:srcCompat="@drawable/plattegrond" />
+
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/pointsBarText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="44dp"
+        android:layout_marginTop="16dp"
+        android:text="@string/voortgang"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ProgressBar
+        android:id="@+id/pointsBar"
+        style="?android:attr/progressBarStyleHorizontal"
+        android:layout_width="239dp"
+        android:layout_height="38dp"
+        android:layout_marginTop="8dp"
+        android:progress="30"
+        android:progressTint="#00BCD4"
+        app:layout_constraintStart_toStartOf="@+id/pointsBarText"
+        app:layout_constraintTop_toBottomOf="@+id/pointsBarText" />
+
+    <TextView
+        android:id="@+id/goToText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:text="@string/ga_naar"
+        app:layout_constraintStart_toStartOf="@+id/plattegrondImage"
+        app:layout_constraintTop_toBottomOf="@+id/plattegrondImage" />
+
+    <TextView
+        android:id="@+id/activeSprookje"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:text="@string/activesprookje"
+        app:layout_constraintStart_toEndOf="@+id/goToText"
+        app:layout_constraintTop_toTopOf="@+id/goToText" />
+
+    <ImageView
+        android:id="@+id/throphyImage"
+        android:layout_width="37dp"
+        android:layout_height="39dp"
+        android:layout_marginStart="16dp"
+        android:contentDescription="@string/throphyimage"
+        app:layout_constraintStart_toEndOf="@+id/pointsBar"
+        app:layout_constraintTop_toTopOf="@+id/pointsBar"
+        app:srcCompat="@drawable/throphy"
+        tools:ignore="ImageContrastCheck" />
+
 </android.support.constraint.ConstraintLayout>
