@@ -1,3 +1,6 @@
 <resources>
     <string name="app_name">SprooktochtApp</string>
+    <string name="beginButton">Begin</string>
+    <string name="sprooktocht">SprookTocht</string>
+    <string name="voer_uw_naam_in">Voer uw naam in</string>
 </resources>

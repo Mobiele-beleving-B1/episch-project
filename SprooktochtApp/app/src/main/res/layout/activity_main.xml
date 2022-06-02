@@ -7,12 +7,52 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
+        android:layout_marginTop="52dp"
+        android:text="De sprooktocht"
+        android:textSize="50sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/beginButton"
+        android:layout_width="157dp"
+        android:layout_height="74dp"
+        android:layout_marginBottom="196dp"
+        android:text="@string/beginButton"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="@+id/nameInput"
+        app:layout_constraintHorizontal_bias="0.493"
+        app:layout_constraintStart_toStartOf="@+id/nameInput" />
+
+    <ImageView
+        android:id="@+id/homeImage"
+        android:layout_width="244dp"
+        android:layout_height="194dp"
+        android:contentDescription="@string/sprooktocht"
+        app:layout_constraintBottom_toTopOf="@+id/nameInput"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+
+    <EditText
+        android:id="@+id/nameInput"
+        android:layout_width="230dp"
+        android:layout_height="74dp"
+        android:layout_marginBottom="32dp"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text="@string/voer_uw_naam_in"
+        android:textAlignment="center"
+        app:layout_constraintBottom_toTopOf="@+id/beginButton"
+        app:layout_constraintEnd_toEndOf="@+id/homeImage"
+        app:layout_constraintStart_toStartOf="@+id/homeImage"
+        android:autofillHints="" />
 
 </android.support.constraint.ConstraintLayout>
