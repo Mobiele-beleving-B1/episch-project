@@ -22,8 +22,8 @@ public class DetailActivity extends AppCompatActivity {
         setContentView(R.layout.activity_detail);
 
         ActionBar actionBar = getSupportActionBar();
-
-        // showing the back button in action bar
+        actionBar.setTitle("Details");
+        // shows the back button in action bar
         actionBar.setDisplayHomeAsUpEnabled(true);
 
 
