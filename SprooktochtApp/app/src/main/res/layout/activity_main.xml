@@ -32,8 +32,8 @@
 
             <ImageView
                 android:id="@+id/homeImage"
-                android:layout_width="283dp"
-                android:layout_height="279dp"
+                android:layout_width="287dp"
+                android:layout_height="284dp"
                 android:baselineAlignBottom="false"
                 android:contentDescription="@string/sprooktocht"
                 android:textAlignment="center"
