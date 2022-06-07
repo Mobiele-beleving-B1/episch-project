@@ -1,5 +1,4 @@
 *.iml
-.gradle
 /local.properties
 /.idea/caches
 /.idea/libraries
@@ -16,11 +15,8 @@
 
 # Gradle files
 .gradle
-.DS_Store
-/build
 .idea/
 app/app.iml
-*.iml
 build/
 
 
@@ -35,7 +31,7 @@ captures/
 output.json
 
 # IntelliJ
-.idea/
+
 deploymentTargetDropDown.xml
 render.experimental.xml
 
