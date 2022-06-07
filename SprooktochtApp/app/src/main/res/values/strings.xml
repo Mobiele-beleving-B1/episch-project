@@ -13,4 +13,6 @@
     <string name="voortgang">Voortgang:</string>
     <string name="plattegrond">Plattegrond</string>
     <string name="throphyimage">throphyImage</string>
+    <string name="viewpager_description">Allows user to horizontally scroll through pages</string>
+    <string name="tabdots_description">Shows on which page the user is</string>
 </resources>
