@@ -4,7 +4,7 @@
 /.idea/caches
 /.idea/libraries
 /.idea/modules.xml
-/misc.xml
+/misc
 /.idea/workspace.xml
 /.idea/navEditor.xml
 /.idea/assetWizardSettings.xml
@@ -13,10 +13,14 @@
 /captures
 .externalNativeBuild
 .cxx
-local.properties
 
 # Gradle files
-/.gradle/
+.gradle
+.DS_Store
+/build
+.idea/
+app/app.iml
+*.iml
 build/
 
 
