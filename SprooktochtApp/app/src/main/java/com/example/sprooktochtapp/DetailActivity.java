@@ -21,8 +21,6 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
 
-        sprookjeImage = (ImageView) findViewById(R.id.homeImage);
-
         ActionBar actionBar = getSupportActionBar();
 
         // showing the back button in action bar
@@ -42,7 +40,7 @@ public class DetailActivity extends AppCompatActivity {
         fairyTaleImage.setImageDrawable(ResourcesCompat.getDrawable(getResources(), selectedFairyTale.getImageOfTaleId(), null));
     }
     @Override
-    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+    public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
             case android.R.id.home:
                 this.finish();
