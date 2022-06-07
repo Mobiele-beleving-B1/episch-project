@@ -13,5 +13,6 @@
     <color name="Main_orange_light"> #ff7f3e </color>
     <color name="Main_yellow"> #f6d860 </color>
     <color name="Main_green"> #94cd40 </color>
+    <color name="Main_red"> #B32727 </color>
 
 </resources>

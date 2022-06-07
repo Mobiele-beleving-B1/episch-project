@@ -2,57 +2,98 @@
 <android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    >
 
-    <TextView
-        android:id="@+id/textView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="52dp"
-        android:text="De Sprooktocht"
-        android:textSize="50sp"
+    <ImageView
+        android:id="@+id/backGroundImage"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        app:srcCompat="@drawable/starbackground"
+        />
+
+    <FrameLayout
+        android:id="@+id/frameLayout"
+        android:layout_width="411dp"
+        android:layout_height="288dp"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.19">
+
+        <android.support.constraint.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <ImageView
+                android:id="@+id/homeImage"
+                android:layout_width="283dp"
+                android:layout_height="279dp"
+                android:baselineAlignBottom="false"
+                android:contentDescription="@string/sprooktocht"
+                android:textAlignment="center"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:srcCompat="@drawable/tree3" />
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="@font/aclonica"
+                android:text="De Sprooktocht"
+                android:textAlignment="center"
+                android:textColor="#B32727"
+                android:textSize="50sp"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toBottomOf="@+id/homeImage"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/homeImage" />
+        </android.support.constraint.ConstraintLayout>
+
+    </FrameLayout>
 
     <Button
         android:id="@+id/beginButton"
-        android:layout_width="157dp"
-        android:layout_height="74dp"
-        android:layout_marginBottom="196dp"
+        android:layout_width="187dp"
+        android:layout_height="97dp"
+        android:layout_marginTop="16dp"
+        android:fontFamily="@font/aclonica"
+        android:padding="5px"
         android:text="@string/beginButton"
         android:textAlignment="center"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:textColor="#F1F0F0"
+        android:textSize="24sp"
+        app:backgroundTint="@color/Main_red"
         app:layout_constraintEnd_toEndOf="@+id/nameInput"
         app:layout_constraintHorizontal_bias="0.493"
-        app:layout_constraintStart_toStartOf="@+id/nameInput" />
-
-    <ImageView
-        android:id="@+id/homeImage"
-        android:layout_width="244dp"
-        android:layout_height="194dp"
-        android:contentDescription="@string/sprooktocht"
-        app:layout_constraintBottom_toTopOf="@+id/nameInput"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView"
-        tools:srcCompat="@tools:sample/backgrounds/scenic" />
+        app:layout_constraintStart_toStartOf="@+id/nameInput"
+        app:layout_constraintTop_toBottomOf="@+id/nameInput" />
 
     <EditText
+
         android:id="@+id/nameInput"
-        android:layout_width="230dp"
-        android:layout_height="74dp"
-        android:layout_marginBottom="32dp"
+        android:layout_width="235dp"
+        android:layout_height="60dp"
+        android:autofillHints=""
+        android:background="@android:color/white"
         android:ems="10"
+        android:fontFamily="@font/aclonica"
+        android:hapticFeedbackEnabled="true"
+        android:hint="Voer uw naam in"
         android:inputType="textPersonName"
-        android:text="@string/voer_uw_naam_in"
         android:textAlignment="center"
-        app:layout_constraintBottom_toTopOf="@+id/beginButton"
-        app:layout_constraintEnd_toEndOf="@+id/homeImage"
-        app:layout_constraintStart_toStartOf="@+id/homeImage"
-        android:autofillHints="" />
+        app:layout_constraintEnd_toEndOf="@+id/frameLayout"
+        app:layout_constraintStart_toStartOf="@+id/frameLayout"
+        app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
+
 
 </android.support.constraint.ConstraintLayout>

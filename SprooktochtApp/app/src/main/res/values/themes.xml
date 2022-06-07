@@ -8,4 +8,12 @@
 
         <!-- Customize your theme here. -->
     </style>
+    <style name="Button.Yellow" parent="ThemeOverlay.AppCompat">
+        <item name="colorAccent">@color/Main_yellow</item>
+    </style>
+    <style name="AppTheme.NoActionBar" parent="Theme.AppCompat.Light.DarkActionBar">
+        <item name="windowActionBar">false</item>
+        <item name="windowNoTitle">true</item>
+        <item name="android:windowFullscreen">true</item>
+    </style>
 </resources>
