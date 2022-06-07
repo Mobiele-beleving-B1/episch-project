@@ -9,7 +9,7 @@
     <ScrollView
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:contentDescription="@string/sprookjes_details"
+        android:contentDescription="sprookjes details"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
@@ -22,11 +22,11 @@
             android:layout_height="wrap_content">
 
             <ImageView
-                android:id="@+id/sprookjeFoto"
-                android:layout_width="165dp"
-                android:layout_height="158dp"
+                android:id="@+id/fairyTaleImage"
+                android:layout_width="340dp"
+                android:layout_height="217dp"
                 android:layout_marginTop="16dp"
-                android:contentDescription="@string/sprookje_details_foto"
+                android:contentDescription="sprookjes details foto"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent"
@@ -34,25 +34,27 @@
                 tools:srcCompat="@tools:sample/avatars" />
 
             <TextView
-                android:id="@+id/sprookjeBeschrijving"
+                android:id="@+id/fairyTaleDescription"
                 android:layout_width="0dp"
                 android:layout_height="493dp"
                 android:layout_marginStart="24dp"
                 android:layout_marginEnd="24dp"
-                android:text="@string/voer_hier_sprookjes_info_in"
+                android:text="Voer hier sprookjes info in"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent" />
 
             <TextView
-                android:id="@+id/textView3"
+                android:id="@+id/fairyTaleName"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginTop="16dp"
                 android:layout_marginBottom="16dp"
-                android:text="@string/sprookjes_naam"
-                app:layout_constraintBottom_toTopOf="@+id/sprookjeBeschrijving"
-                app:layout_constraintStart_toStartOf="@+id/sprookjeBeschrijving"
-                app:layout_constraintTop_toBottomOf="@+id/sprookjeFoto" />
+                android:text="sprookjes naam"
+                android:textStyle="bold"
+                app:layout_constraintBottom_toTopOf="@+id/fairyTaleDescription"
+                app:layout_constraintStart_toStartOf="@+id/fairyTaleDescription"
+                app:layout_constraintTop_toBottomOf="@+id/fairyTaleImage" />
         </android.support.constraint.ConstraintLayout>
     </ScrollView>
 
