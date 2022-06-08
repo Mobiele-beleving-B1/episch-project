@@ -13,10 +13,8 @@
 .externalNativeBuild
 .cxx
 
-# Gradle files
-.gradle
+
 .idea/
-app/app.iml
 build/
 
 
