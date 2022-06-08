@@ -9,6 +9,7 @@ import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 
+import java.util.ArrayList;
 import java.util.List;
 
 public class TutorialActivity extends FragmentActivity {
@@ -22,7 +23,7 @@ public class TutorialActivity extends FragmentActivity {
     /**
      * the pager adapter, which sends the pages to view pager widget
      */
-    private PagerAdapter pagerAdapter;
+    private TutorialPagerAdapter pagerAdapter;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,7 +34,11 @@ public class TutorialActivity extends FragmentActivity {
         tutorialPager = (ViewPager) findViewById(R.id.pager);
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabDots);
         tabLayout.setupWithViewPager(tutorialPager, true);
-        pagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
+
+        pagerAdapter = new TutorialPagerAdapter(getSupportFragmentManager());
+        pagerAdapter.add(new Page1());
+        pagerAdapter.add(new Page2());
+        pagerAdapter.add(new Page3());
         tutorialPager.setAdapter(pagerAdapter);
     }
 
@@ -53,37 +58,32 @@ public class TutorialActivity extends FragmentActivity {
      * a pager adapter that represents a number of ScreenSlidePageFragment objects,
      * equal to NUM_PAGES
      */
-    private class ScreenSlidePagerAdapter extends FragmentStatePagerAdapter {
+    private class TutorialPagerAdapter extends FragmentStatePagerAdapter {
 
-        /**
-         * TODO: make a list of Fragments containing tutorial info
-         */
-        private List<Fragment> fragments;
 
         /**
          * the number of pages to show in the tutorial
-         * TODO: replace with list of Fragments
          */
         private static final int NUM_PAGES = 5;
+        private final List<Fragment> fragments = new ArrayList<>();
 
-        public ScreenSlidePagerAdapter(FragmentManager fm) {
+
+        public TutorialPagerAdapter(FragmentManager fm) {
             super(fm);
         }
 
-        /**
-         * TODO: return element of list of ScreenSlidePageFragment
-         */
-        @Override
-        public Fragment getItem(int i) {
-            return new ScreenSlidePageFragment();
+        public void add(Fragment fragment) {
+            fragments.add(fragment);
         }
 
-        /**
-         * TODO: return list of Fragments size
-         */
+        @Override
+        public Fragment getItem(int i) {
+          return fragments.get(i);
+        }
+
         @Override
         public int getCount() {
-            return NUM_PAGES;
+            return fragments.size();
         }
     }
 }
