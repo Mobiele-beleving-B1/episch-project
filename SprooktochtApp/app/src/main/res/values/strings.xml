@@ -13,6 +13,8 @@
     <string name="voortgang">Voortgang:</string>
     <string name="plattegrond">Plattegrond</string>
     <string name="throphyimage">throphyImage</string>
+    <string name="viewpager_description">Allows user to horizontally scroll through pages</string>
+    <string name="tabdots_description">Shows on which page the user is</string>
     <string name="drie_biggetjes">Er waren eens drie kleine biggetjes, allemaal op avontuur in de grote wereld. Ze waren broers van elkaar en elk van hun was van plan
 om een huis te bouwen. Het jongste biggetje was lui en bouwde zijn huis van stro. De oudste was heel enthousiast en bouwde zijn huis van
 steen. De middelste vondt het een goed idee om zijn huis van hout te maken. Maar op een dag kwam er een wolf die maar al te graag een

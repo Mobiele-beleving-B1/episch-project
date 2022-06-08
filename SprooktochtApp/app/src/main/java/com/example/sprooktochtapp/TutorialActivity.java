@@ -1,6 +1,7 @@
 package com.example.sprooktochtapp;
 
 import android.os.Bundle;
+import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
@@ -26,10 +27,12 @@ public class TutorialActivity extends FragmentActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_screen_slide);
+        setContentView(R.layout.activity_tutorial);
 
         // Instantiate a ViewPager and a PagerAdapter
         tutorialPager = (ViewPager) findViewById(R.id.pager);
+        TabLayout tabLayout = (TabLayout) findViewById(R.id.tabDots);
+        tabLayout.setupWithViewPager(tutorialPager, true);
         pagerAdapter = new ScreenSlidePagerAdapter(getSupportFragmentManager());
         tutorialPager.setAdapter(pagerAdapter);
     }
