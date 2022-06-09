@@ -35,6 +35,7 @@ public class TutorialActivity extends FragmentActivity {
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabDots);
         tabLayout.setupWithViewPager(tutorialPager, true);
 
+
         pagerAdapter = new TutorialPagerAdapter(getSupportFragmentManager());
         pagerAdapter.add(new Page1());
         pagerAdapter.add(new Page2());
