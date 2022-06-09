@@ -26,12 +26,10 @@ public class MainActivity extends AppCompatActivity {
 
         beginButton = (Button) findViewById(R.id.beginButton);
         nameInput = (EditText) findViewById(R.id.nameInput);
-        homeImage = (ImageView) findViewById(R.id.homeImage);
         layout = (ConstraintLayout) findViewById(R.id.constraintLayout);
-        homeImage.setColorFilter(getResources().getColor(R.color.white));
-//        layout.setBackground(R.drawable.starbackground);
+        //layout.setBackground(R.drawable.starbackground);
         nameInput.setHint("Voer uw naam in");
-        beginButton.setText("Begin uw avontuur");
+//        beginButton.setText("Begin uw avontuur");
         beginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
