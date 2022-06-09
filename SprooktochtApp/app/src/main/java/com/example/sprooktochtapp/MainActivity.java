@@ -36,7 +36,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    startActivity(new Intent(getApplicationContext(), DetailActivity.class));
+                    startActivity(new Intent(getApplicationContext(), TutorialActivity.class));
                 } catch (Exception e) {
                     Log.e("MyActivity::MyMethod", e.getMessage());
                 }
