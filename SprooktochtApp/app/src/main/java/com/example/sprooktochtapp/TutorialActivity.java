@@ -1,5 +1,6 @@
 package com.example.sprooktochtapp;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
@@ -8,12 +9,15 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
 
 import java.util.ArrayList;
 import java.util.List;
 
 public class TutorialActivity extends FragmentActivity {
-
+    private Button skipButton;
     /**
      * the paper widget, which manages animation and allows switching horizontally
      * between wizard steps
@@ -30,11 +34,23 @@ public class TutorialActivity extends FragmentActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
 
+        //Instantiate button with intent
+        skipButton = (Button) findViewById(R.id.skipButton);
+        skipButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                try {
+                    startActivity(new Intent(getApplicationContext(), DetailActivity.class));
+                } catch (Exception e) {
+                    Log.e("MyActivity::MyMethod", e.getMessage());
+                }
+            }
+        });
+
         // Instantiate a ViewPager and a PagerAdapter
         tutorialPager = (ViewPager) findViewById(R.id.pager);
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabDots);
         tabLayout.setupWithViewPager(tutorialPager, true);
-
 
         pagerAdapter = new TutorialPagerAdapter(getSupportFragmentManager());
         pagerAdapter.add(new Page1());
@@ -79,7 +95,7 @@ public class TutorialActivity extends FragmentActivity {
 
         @Override
         public Fragment getItem(int i) {
-          return fragments.get(i);
+            return fragments.get(i);
         }
 
         @Override
