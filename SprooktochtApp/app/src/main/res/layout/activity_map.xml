@@ -114,6 +114,34 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/wood_1" />
+
+    <Button
+        android:id="@+id/drieBiggetjesButton"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/roundedbutton"
+        android:backgroundTint="#4DD83E"
+        android:text="!"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.71"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <Button
+        android:id="@+id/attractie2Button"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/roundedbutton"
+        android:backgroundTint="#4DD83E"
+        android:text="!"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.59" />
     //To flip horizontally or/>
 
 </android.support.constraint.ConstraintLayout>
