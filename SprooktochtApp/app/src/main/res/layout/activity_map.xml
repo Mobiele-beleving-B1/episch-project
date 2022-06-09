@@ -35,7 +35,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.100000024" />
+        app:layout_constraintVertical_bias="0.060000002" />
 
     <ImageView
         android:id="@+id/rightBranchMain"
@@ -102,7 +102,8 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/pointsBar"
-        app:srcCompat="@drawable/essteling_plattegrond_b1" />
+        app:srcCompat="@drawable/essteling_plattegrond_b1"
+        />
 
     <ImageView
         android:id="@+id/topRightLogMap"
@@ -130,7 +131,7 @@
         app:layout_constraintVertical_bias="0.8" />
 
     <Button
-        android:id="@+id/attractie2Button"
+        android:id="@+id/activity2Button"
         android:layout_width="32dp"
         android:layout_height="32dp"
         android:background="@drawable/roundedbutton"
@@ -142,6 +143,14 @@
         app:layout_constraintStart_toStartOf="@+id/imageView4"
         app:layout_constraintTop_toTopOf="@+id/imageView4"
         app:layout_constraintVertical_bias="0.59" />
-    //To flip horizontally or/>
+
+    <TextView
+        android:id="@+id/selectedFairyTaleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="17dp"
+        tools:layout_editor_absoluteY="580dp" />
 
 </android.support.constraint.ConstraintLayout>
