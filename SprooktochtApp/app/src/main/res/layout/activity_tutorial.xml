@@ -5,12 +5,22 @@
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto">
 
+    <Button
+        android:id="@+id/button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Skip"
+        android:visibility="visible"
+        tools:layout_editor_absoluteX="307dp"
+        tools:layout_editor_absoluteY="8dp"
+        tools:visibility="visible" />
+
     <android.support.v4.view.ViewPager
         android:id="@+id/pager"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
+        android:layout_width="346dp"
+        android:layout_height="651dp"
         android:layout_marginStart="32dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="80dp"
         android:layout_marginEnd="32dp"
         android:background="@color/design_default_color_primary_dark"
         android:contentDescription="@string/viewpager_description"
@@ -18,7 +28,9 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent">
+
+    </android.support.v4.view.ViewPager>
 
     <android.support.design.widget.TabLayout
         android:id="@+id/tabDots"
