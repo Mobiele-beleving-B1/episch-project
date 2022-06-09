@@ -6,34 +6,49 @@
     android:layout_height="match_parent"
     tools:context=".MapActivity">
 
-    <ImageView
-        android:id="@+id/plattegrondImage"
-        android:layout_width="411dp"
-        android:layout_height="367dp"
-        android:layout_marginTop="24dp"
-        android:contentDescription="@string/plattegrond"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pointsBar"
-        tools:ignore="ImageContrastCheck"
-        tools:srcCompat="@drawable/plattegrond" />
-
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/recyclerView"
         android:layout_width="0dp"
         android:layout_height="0dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent" />
 
+    <ImageView
+        android:id="@+id/backGroundImage"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toBottomOf="@+id/recyclerView"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/starbackground" />
+
     <TextView
         android:id="@+id/pointsBarText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="44dp"
-        android:layout_marginTop="16dp"
+        android:background="#F6F6F6"
         android:text="@string/voortgang"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.060000002" />
+
+    <ImageView
+        android:id="@+id/rightBranchMain"
+        android:layout_width="410dp"
+        android:layout_height="119dp"
+        android:scaleType="fitXY"
+        android:src="@drawable/wood_2"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.52"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/goToText"
+        app:layout_constraintVertical_bias="1.0" />
 
     <ProgressBar
         android:id="@+id/pointsBar"
@@ -41,6 +56,7 @@
         android:layout_width="239dp"
         android:layout_height="38dp"
         android:layout_marginTop="8dp"
+        android:background="#F6F6F6"
         android:progress="30"
         android:progressTint="#00BCD4"
         app:layout_constraintStart_toStartOf="@+id/pointsBarText"
@@ -50,17 +66,18 @@
         android:id="@+id/goToText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="32dp"
+        android:layout_marginTop="10dp"
+        android:background="#F6F6F6"
         android:text="@string/ga_naar"
-        app:layout_constraintStart_toStartOf="@+id/plattegrondImage"
-        app:layout_constraintTop_toBottomOf="@+id/plattegrondImage" />
+        app:layout_constraintTop_toBottomOf="@+id/imageView4"
+        tools:layout_editor_absoluteX="16dp" />
 
     <TextView
         android:id="@+id/activeSprookje"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
+        android:background="#F6F6F6"
         android:text="@string/activesprookje"
         app:layout_constraintStart_toEndOf="@+id/goToText"
         app:layout_constraintTop_toTopOf="@+id/goToText" />
@@ -70,10 +87,70 @@
         android:layout_width="37dp"
         android:layout_height="39dp"
         android:layout_marginStart="16dp"
+        android:background="#F6F6F6"
         android:contentDescription="@string/throphyimage"
         app:layout_constraintStart_toEndOf="@+id/pointsBar"
         app:layout_constraintTop_toTopOf="@+id/pointsBar"
         app:srcCompat="@drawable/throphy"
         tools:ignore="ImageContrastCheck" />
+
+    <ImageView
+        android:id="@+id/imageView4"
+        android:layout_width="wrap_content"
+        android:layout_height="415dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/pointsBar"
+        app:srcCompat="@drawable/essteling_plattegrond_b1"
+        />
+
+    <ImageView
+        android:id="@+id/topRightLogMap"
+        android:layout_width="184dp"
+        android:layout_height="155dp"
+        android:scaleX="-1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0"
+        app:srcCompat="@drawable/wood_1" />
+
+    <Button
+        android:id="@+id/drieBiggetjesButton"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/roundedbutton"
+        android:backgroundTint="#4DD83E"
+        android:text="!"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.71"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.8" />
+
+    <Button
+        android:id="@+id/activity2Button"
+        android:layout_width="32dp"
+        android:layout_height="32dp"
+        android:background="@drawable/roundedbutton"
+        android:backgroundTint="#4DD83E"
+        android:text="!"
+        app:layout_constraintBottom_toBottomOf="@+id/imageView4"
+        app:layout_constraintEnd_toEndOf="@+id/imageView4"
+        app:layout_constraintHorizontal_bias="0.22"
+        app:layout_constraintStart_toStartOf="@+id/imageView4"
+        app:layout_constraintTop_toTopOf="@+id/imageView4"
+        app:layout_constraintVertical_bias="0.59" />
+
+    <TextView
+        android:id="@+id/selectedFairyTaleText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        android:text="TextView"
+        tools:layout_editor_absoluteX="17dp"
+        tools:layout_editor_absoluteY="580dp" />
 
 </android.support.constraint.ConstraintLayout>

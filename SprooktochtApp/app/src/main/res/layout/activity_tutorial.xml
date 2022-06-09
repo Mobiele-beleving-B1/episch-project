@@ -32,7 +32,7 @@
         android:src="@drawable/vine_2" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/rightBranchMain"
         android:layout_width="wrap_content"
         android:layout_height="210dp"
         android:src="@drawable/wood_2"
@@ -41,10 +41,12 @@
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0" />
+        app:layout_constraintVertical_bias="1.0"
+        android:scaleType="fitXY"
+        />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/bottomLogMain"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:rotationY="180"
@@ -55,7 +57,7 @@
         android:src="@drawable/mushroom_1" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/topLeftLog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="387dp"
@@ -67,7 +69,7 @@
         app:layout_constraintVertical_bias="0.72" />
 
     <Button
-        android:id="@+id/button"
+        android:id="@+id/skipButton"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Skip"

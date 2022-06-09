@@ -33,7 +33,7 @@ public class DetailActivity extends AppCompatActivity {
         fairyTaleDescription = (TextView) findViewById(R.id.fairyTaleDescription);
         fairyTaleImage = (ImageView) findViewById(R.id.fairyTaleImage);
 
-        FairyTale selectedFairyTale = FairyTaleManager.getFairyTale(1);
+        FairyTale selectedFairyTale = FairyTaleManager.getFairyTale(0);
 
         fairyTaleName.setText(selectedFairyTale.getNameOfTale());
         fairyTaleDescription.setText(selectedFairyTale.getTaleDescription());

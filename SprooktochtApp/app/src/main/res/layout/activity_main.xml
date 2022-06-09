@@ -16,7 +16,7 @@
         app:srcCompat="@drawable/starbackground" />
 
     <ImageView
-        android:id="@+id/imageView6"
+        android:id="@+id/topLeftLogMain"
         android:layout_width="411dp"
         android:layout_height="344dp"
         app:layout_constraintStart_toStartOf="parent"
@@ -24,7 +24,7 @@
         app:srcCompat="@drawable/wood_1" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/rightBranchMain"
         android:layout_width="269dp"
         android:layout_height="308dp"
         android:layout_marginTop="40dp"
@@ -101,14 +101,15 @@
         app:layout_constraintTop_toBottomOf="@+id/frameLayout" />
 
     <ImageView
-        android:id="@+id/imageView5"
-        android:layout_width="414dp"
+        android:id="@+id/bottomLogMain"
+        android:layout_width="match_parent"
         android:layout_height="235dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.48"
         app:layout_constraintStart_toStartOf="parent"
-        app:srcCompat="@drawable/john_lennon" />
+        app:srcCompat="@drawable/john_lennon"
+        android:scaleType="fitXY"/>
 
 
 </android.support.constraint.ConstraintLayout>
