@@ -1,5 +1,8 @@
 package com.example.sprooktochtapp;
 
+import android.content.Intent;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.ActionBar;
 import android.support.v4.content.res.ResourcesCompat;
 import android.support.v7.app.AppCompatActivity;
@@ -15,11 +18,17 @@ public class DetailActivity extends AppCompatActivity {
     TextView fairyTaleName;
     TextView fairyTaleDescription;
     ImageView fairyTaleImage;
+    FairyTale selectedFairyTale;
 
+    @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
+
+        Intent intent = getIntent();
+        String fairyTaleInfo = intent.getStringExtra("fairy_tale_info");
+        this.selectedFairyTale = FairyTaleManager.getFairyTale(fairyTaleInfo);
 
         ActionBar actionBar = getSupportActionBar();
         actionBar.setTitle("Details");
@@ -33,12 +42,13 @@ public class DetailActivity extends AppCompatActivity {
         fairyTaleDescription = (TextView) findViewById(R.id.fairyTaleDescription);
         fairyTaleImage = (ImageView) findViewById(R.id.fairyTaleImage);
 
-        FairyTale selectedFairyTale = FairyTaleManager.getFairyTale(0);
+
 
         fairyTaleName.setText(selectedFairyTale.getNameOfTale());
         fairyTaleDescription.setText(selectedFairyTale.getTaleDescription());
         fairyTaleImage.setImageDrawable(ResourcesCompat.getDrawable(getResources(), selectedFairyTale.getImageOfTaleId(), null));
     }
+
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {

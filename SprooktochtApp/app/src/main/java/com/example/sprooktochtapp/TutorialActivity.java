@@ -40,7 +40,7 @@ public class TutorialActivity extends FragmentActivity {
             @Override
             public void onClick(View v) {
                 try {
-                    startActivity(new Intent(getApplicationContext(), DetailActivity.class));
+                    startActivity(new Intent(getApplicationContext(), MapActivity.class));
                 } catch (Exception e) {
                     Log.e("MyActivity::MyMethod", e.getMessage());
                 }
