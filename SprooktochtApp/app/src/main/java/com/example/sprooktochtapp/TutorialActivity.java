@@ -49,6 +49,23 @@ public class TutorialActivity extends FragmentActivity {
 
         // Instantiate a ViewPager and a PagerAdapter
         tutorialPager = (ViewPager) findViewById(R.id.pager);
+
+        /**
+         * changes button text based on page number
+         */
+        tutorialPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
+            public void onPageScrollStateChanged(int state) {}
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+
+            public void onPageSelected(int position) {
+                if (position == 2) {
+                    skipButton.setText(R.string.go);
+                } else {
+                    skipButton.setText(R.string.skip);
+                }
+            }
+        });
+
         TabLayout tabLayout = (TabLayout) findViewById(R.id.tabDots);
         tabLayout.setupWithViewPager(tutorialPager, true);
 
