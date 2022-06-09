@@ -32,7 +32,7 @@
         android:src="@drawable/vine_2" />
 
     <ImageView
-        android:id="@+id/imageView7"
+        android:id="@+id/rightBranchMain"
         android:layout_width="wrap_content"
         android:layout_height="210dp"
         android:src="@drawable/wood_2"
@@ -46,7 +46,7 @@
         />
 
     <ImageView
-        android:id="@+id/imageView5"
+        android:id="@+id/bottomLogMain"
         android:layout_width="130dp"
         android:layout_height="wrap_content"
         android:rotationY="180"
@@ -57,7 +57,7 @@
         android:src="@drawable/mushroom_1" />
 
     <ImageView
-        android:id="@+id/imageView3"
+        android:id="@+id/topLeftLog"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="387dp"

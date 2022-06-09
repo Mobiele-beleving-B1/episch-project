@@ -38,9 +38,9 @@
         app:layout_constraintVertical_bias="0.100000024" />
 
     <ImageView
-        android:id="@+id/imageView7"
-        android:layout_width="0dp"
-        android:layout_height="113dp"
+        android:id="@+id/rightBranchMain"
+        android:layout_width="410dp"
+        android:layout_height="119dp"
         android:scaleType="fitXY"
         android:src="@drawable/wood_2"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -105,7 +105,7 @@
         app:srcCompat="@drawable/essteling_plattegrond_b1" />
 
     <ImageView
-        android:id="@+id/imageView"
+        android:id="@+id/topRightLogMap"
         android:layout_width="184dp"
         android:layout_height="155dp"
         android:scaleX="-1"
