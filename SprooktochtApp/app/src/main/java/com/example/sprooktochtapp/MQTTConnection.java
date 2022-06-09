@@ -1,14 +1,17 @@
 package com.example.sprooktochtapp;
 
 import android.util.Log;
-import android.widget.Toast;
+
+import org.eclipse.paho.android.service.MqttAndroidClient;
+import org.eclipse.paho.client.mqttv3.IMqttActionListener;
+import org.eclipse.paho.client.mqttv3.IMqttToken;
+import org.eclipse.paho.client.mqttv3.MqttConnectOptions;
+import org.eclipse.paho.client.mqttv3.MqttException;
+import org.eclipse.paho.client.mqttv3.MqttMessage;
 
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.UUID;
-
-import org.eclipse.paho.android.service.MqttAndroidClient;
-
 
 
 public class MQTTConnection {
