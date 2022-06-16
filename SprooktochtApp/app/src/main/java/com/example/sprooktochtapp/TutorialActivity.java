@@ -47,6 +47,8 @@ public class TutorialActivity extends FragmentActivity {
             public void onClick(View v) {
                 if (skipButton.getText().equals(App.getAppResources().getString(R.string.skip))) {
                     popUpClass.showPopupWindow(v);
+                } else if (skipButton.getText().equals(App.getAppResources().getString(R.string.go))) {
+                    startActivity(new Intent(TutorialActivity.this, MapActivity.class));
                 }
             }
         });
@@ -153,7 +155,6 @@ public class TutorialActivity extends FragmentActivity {
 
 
             popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
-
             // initialize elements of window
             Button yesButton = (Button) popupView.findViewById(R.id.yesButton);
             yesButton.setOnClickListener(new View.OnClickListener() {
