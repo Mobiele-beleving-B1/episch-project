@@ -19,6 +19,7 @@ public class DetailActivity extends AppCompatActivity {
     TextView fairyTaleDescription;
     ImageView fairyTaleImage;
     FairyTale selectedFairyTale;
+    MQTTService service;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override

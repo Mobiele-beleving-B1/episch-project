@@ -13,6 +13,12 @@ import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.TextView;
 
+import org.eclipse.paho.android.service.MqttAndroidClient;
+import org.eclipse.paho.client.mqttv3.IMqttActionListener;
+import org.eclipse.paho.client.mqttv3.IMqttToken;
+import org.eclipse.paho.client.mqttv3.MqttClient;
+import org.eclipse.paho.client.mqttv3.MqttException;
+
 public class MainActivity extends AppCompatActivity {
 
     private Button beginButton;
@@ -34,6 +40,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 try {
+
                     startActivity(new Intent(getApplicationContext(), TutorialActivity.class));
                 } catch (Exception e) {
                     Log.e("MyActivity::MyMethod", e.getMessage());
