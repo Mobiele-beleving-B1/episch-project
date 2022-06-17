@@ -28,19 +28,25 @@ public class TutorialActivity extends FragmentActivity {
      * the pager adapter, which sends the pages to view pager widget
      */
     private TutorialPagerAdapter pagerAdapter;
+    protected MQTTService service;
+    protected Profile profile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
-
+        service = (MQTTService) getIntent().getSerializableExtra("service");
+        profile = (Profile) getIntent().getSerializableExtra("profile");
         //Instantiate button with intent
         skipButton = (Button) findViewById(R.id.skipButton);
         skipButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    startActivity(new Intent(getApplicationContext(), MapActivity.class));
+                    Intent intent = new Intent(getApplicationContext(), MapActivity.class);
+                    intent.putExtra("profile",profile);
+                    intent.putExtra("service",service);
+                    startActivity(intent);
                 } catch (Exception e) {
                     Log.e("MyActivity::MyMethod", e.getMessage());
                 }

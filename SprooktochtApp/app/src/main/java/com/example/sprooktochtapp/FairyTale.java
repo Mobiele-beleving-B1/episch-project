@@ -6,6 +6,7 @@ package com.example.sprooktochtapp;
  */
 public class FairyTale {
     private String nameOfTale;
+    private String[] gameNames;
     private int imageOfTaleId;
     private String nameOfLand;
     private String taleDescription;
@@ -13,12 +14,14 @@ public class FairyTale {
     /**
      * creates an object of FairyTale with
      * @param nameOfTale : is what FairyTale is called
+     * @param gameNames : names of the games at the location
      * @param imageOfTaleId : id of image resource
      * @param nameOfLand : name of land of origin
      * @param taleDescription : description of the FairyTale, also describe game issue to user
      */
-    public FairyTale(String nameOfTale, int imageOfTaleId, String nameOfLand, String taleDescription) {
+    public FairyTale(String nameOfTale,String[] gameNames, int imageOfTaleId, String nameOfLand, String taleDescription) {
         this.nameOfTale = nameOfTale;
+        this.gameNames = gameNames;
         this.imageOfTaleId = imageOfTaleId;
         this.nameOfLand = nameOfLand;
         this.taleDescription = taleDescription;
@@ -35,6 +38,8 @@ public class FairyTale {
     public String getNameOfLand() {
         return nameOfLand;
     }
+
+    public String[] getGameNames(){return gameNames;}
 
     public String getTaleDescription() {
         return taleDescription;

@@ -25,6 +25,8 @@ public class MainActivity extends AppCompatActivity {
     private EditText nameInput;
     private ImageView homeImage;
     private ConstraintLayout layout;
+    protected MQTTService service;
+    protected Profile profile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -36,12 +38,16 @@ public class MainActivity extends AppCompatActivity {
         //layout.setBackground(R.drawable.starbackground);
         nameInput.setHint("Voer uw naam in");
 //        beginButton.setText("Begin uw avontuur");
+        service = new MQTTService(this);
         beginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-
-                    startActivity(new Intent(getApplicationContext(), TutorialActivity.class));
+                    profile = new Profile(nameInput.getText().toString(),service);
+                    Intent intent = new Intent(getApplicationContext(), TutorialActivity.class);
+                    intent.putExtra("profile",profile);
+                    intent.putExtra("service",service);
+                    startActivity(intent);
                 } catch (Exception e) {
                     Log.e("MyActivity::MyMethod", e.getMessage());
                 }

@@ -12,11 +12,12 @@ import org.eclipse.paho.client.mqttv3.MqttClient;
 import org.eclipse.paho.client.mqttv3.MqttException;
 import org.eclipse.paho.client.mqttv3.MqttMessage;
 
+import java.io.Serializable;
 import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MQTTService {
+public class MQTTService implements Serializable {
     private MqttAndroidClient client;
     private int qos = 0;
     private HashMap<String,String>data;
