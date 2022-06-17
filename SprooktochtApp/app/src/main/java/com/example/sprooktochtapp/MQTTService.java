@@ -17,13 +17,18 @@ import java.io.UnsupportedEncodingException;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class MQTTService implements Serializable {
+public class MQTTService  {
     private MqttAndroidClient client;
     private int qos = 0;
     private HashMap<String,String>data;
     private ArrayList<MQTTCallBack> callbacks;
-    public MQTTService(AppCompatActivity activity) {
-        data = new HashMap<>();
+    private MQTTStorage storage;
+    public MQTTService(AppCompatActivity activity, MQTTStorage mqttStorage) {
+
+        callbacks = new ArrayList<>();
+        this.storage = mqttStorage;
+        data =storage.getData();
+        callbacks = storage.getCallbacks();
         String clientId = MqttClient.generateClientId();
         client =
                 new MqttAndroidClient(activity.getApplicationContext(), "tcp://broker.hivemq.com:1883",
@@ -61,6 +66,7 @@ public class MQTTService implements Serializable {
                     for (MQTTCallBack callback : callbacks) {
                         callback.receive(topic,text);
                     }
+                    mqttStorage.setData(data);
                 }
 
             }
@@ -83,12 +89,7 @@ public class MQTTService implements Serializable {
             return false;
         }
     }
-    public boolean subscribe(MQTTCallBack callBack,String topic){
-        if(!callbacks.contains(callBack)){
-            callbacks.add(callBack);
-        }
-        return subscribe(topic);
-    }
+
     public boolean subscribe(String topic){
         try {
             IMqttToken subToken = client.subscribe(topic, qos);
@@ -121,6 +122,7 @@ public class MQTTService implements Serializable {
         if(!callbacks.contains(callBack)){
             callbacks.add(callBack);
         }
+        storage.setCallbacks(callbacks);
     }
 
 

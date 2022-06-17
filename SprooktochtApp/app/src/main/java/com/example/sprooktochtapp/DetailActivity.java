@@ -12,8 +12,6 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.MenuItem;
 import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 
 public class DetailActivity extends AppCompatActivity {
     TextView fairyTaleName;
@@ -22,7 +20,7 @@ public class DetailActivity extends AppCompatActivity {
     FairyTale selectedFairyTale;
     Button testbutton;
     protected MQTTService service;
-    protected Profile profile;
+    protected MQTTProfile MQTTProfile;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -30,7 +28,7 @@ public class DetailActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_detail);
         service = (MQTTService) getIntent().getSerializableExtra("service");
-        profile = (Profile) getIntent().getSerializableExtra("profile");
+        MQTTProfile = (MQTTProfile) getIntent().getSerializableExtra("profile");
         Intent intent = getIntent();
         String fairyTaleInfo = intent.getStringExtra("fairy_tale_info");
         this.selectedFairyTale = FairyTaleManager.getFairyTale(fairyTaleInfo);
@@ -38,7 +36,7 @@ public class DetailActivity extends AppCompatActivity {
         testbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                profile.playGame(selectedFairyTale);
+                MQTTProfile.playGame(selectedFairyTale);
             }
         });
         ActionBar actionBar = getSupportActionBar();

@@ -7,7 +7,6 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
-import android.support.v4.view.PagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
 import android.view.View;
@@ -29,14 +28,15 @@ public class TutorialActivity extends FragmentActivity {
      */
     private TutorialPagerAdapter pagerAdapter;
     protected MQTTService service;
-    protected Profile profile;
+    protected MQTTProfile MQTTProfile;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
-        service = (MQTTService) getIntent().getSerializableExtra("service");
-        profile = (Profile) getIntent().getSerializableExtra("profile");
+
+        MQTTProfile = (MQTTProfile) getIntent().getSerializableExtra("profile");
+        service = new MQTTService(this,MQTTProfile.getStorage());
         //Instantiate button with intent
         skipButton = (Button) findViewById(R.id.skipButton);
         skipButton.setOnClickListener(new View.OnClickListener() {
@@ -44,8 +44,7 @@ public class TutorialActivity extends FragmentActivity {
             public void onClick(View v) {
                 try {
                     Intent intent = new Intent(getApplicationContext(), MapActivity.class);
-                    intent.putExtra("profile",profile);
-                    intent.putExtra("service",service);
+                    intent.putExtra("profile", MQTTProfile);
                     startActivity(intent);
                 } catch (Exception e) {
                     Log.e("MyActivity::MyMethod", e.getMessage());

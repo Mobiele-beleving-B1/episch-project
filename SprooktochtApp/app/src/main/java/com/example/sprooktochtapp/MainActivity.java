@@ -1,8 +1,6 @@
 package com.example.sprooktochtapp;
 
 import android.content.Intent;
-import android.graphics.Color;
-import android.media.Image;
 import android.support.constraint.ConstraintLayout;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
@@ -11,13 +9,6 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
-import android.widget.TextView;
-
-import org.eclipse.paho.android.service.MqttAndroidClient;
-import org.eclipse.paho.client.mqttv3.IMqttActionListener;
-import org.eclipse.paho.client.mqttv3.IMqttToken;
-import org.eclipse.paho.client.mqttv3.MqttClient;
-import org.eclipse.paho.client.mqttv3.MqttException;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -26,7 +17,8 @@ public class MainActivity extends AppCompatActivity {
     private ImageView homeImage;
     private ConstraintLayout layout;
     protected MQTTService service;
-    protected Profile profile;
+    protected MQTTStorage storage;
+    protected MQTTProfile MQTTProfile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -38,15 +30,18 @@ public class MainActivity extends AppCompatActivity {
         //layout.setBackground(R.drawable.starbackground);
         nameInput.setHint("Voer uw naam in");
 //        beginButton.setText("Begin uw avontuur");
-        service = new MQTTService(this);
+        storage = new MQTTStorage();
+
+        service = new MQTTService(this,storage);
         beginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
-                    profile = new Profile(nameInput.getText().toString(),service);
+                    String name = nameInput.getText().toString();
+                    Log.d("name",name);
+                    MQTTProfile = new MQTTProfile(name,service,storage);
                     Intent intent = new Intent(getApplicationContext(), TutorialActivity.class);
-                    intent.putExtra("profile",profile);
-                    intent.putExtra("service",service);
+                    intent.putExtra("profile", MQTTProfile);
                     startActivity(intent);
                 } catch (Exception e) {
                     Log.e("MyActivity::MyMethod", e.getMessage());
