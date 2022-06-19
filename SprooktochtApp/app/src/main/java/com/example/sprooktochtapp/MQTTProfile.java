@@ -11,6 +11,7 @@ import java.io.Serializable;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.Set;
 
 import javax.json.Json;
 import javax.json.JsonObject;
@@ -21,43 +22,35 @@ public class MQTTProfile implements MQTTCallBack {
 
     private String name;
     private String id;
-    private transient MQTTService service;
     private final String mainTopic = "avanstibreda/ti/1.4/B1/sprookTocht/";
-    private ArrayList<String> topics;
     private HashMap<String, Double> games = new HashMap<>();
-    private MQTTStorage storage;
     private long points;
+    private HashMap<String, String> data;
 
 
-    public MQTTProfile(String name, MQTTService service, MQTTStorage storage) {
+    public MQTTProfile(String name) {
         games.put("biggenspel", 0.04);
         this.name = name;
-        this.storage = storage;
         this.id = MqttClient.generateClientId();
         this.points = 0;
-        service.listen(this);
-        reInitialise(service);
-
-    }
-
-    public MQTTStorage getStorage() {
-        return storage;
-    }
-
-    public void reInitialise(MQTTService service) {
-        this.service = service;
-        for (String gameName : games.keySet()) {
-            service.subscribe(mainTopic + "gameData/" + gameName + "/Score");
+        this.data = new HashMap<>();
+        for (String s : games.keySet()) {
+            data.put(mainTopic + "gameData/" + s + "/Score", "");
+            Log.d("MQTT","added to topics: "+ mainTopic + "gameData/" + s + "/Score");
         }
     }
+    public Set<String> getTopics(){
+        return  data.keySet();
+    }
+
 
     private void gameData(String gameName, String dataType, String data) {
         Log.d("mqtt", "werkt tot hier");
         if (dataType.equals("Score") && data.startsWith(id)) {
             int score = Integer.parseInt(data.replace(id, ""));
-            for (String games : new String[]{"biggenSpel"}) {
-                if (games.equals(gameName)) {
-                    points += score;
+            for (String game : games.keySet()) {
+                if (game.equals(gameName)) {
+                    points += score * games.get(game);
                 }
 
             }
@@ -68,21 +61,22 @@ public class MQTTProfile implements MQTTCallBack {
 
     }
 
+    public long getPoints() {
+        return points;
+    }
 
     @Override
     public void receive(String topic, String data) {
         topic = topic.replace(mainTopic, "");
-        if (this.topics.contains(topic)) {
-            if (topic.startsWith("gameData")) {
-                String[] game = topic.split("/");
-                gameData(game[1], game[2], data);
+        String[] dataNames = (String[]) this.data.keySet().toArray();
+        for (int i = 0; i < this.data.keySet().size(); i++) {
+            if (topic.startsWith(dataNames[i])){
+                if (topic.startsWith("gameData")) {
+                    String[] game = topic.split("/");
+                    gameData(game[1], game[2], data);
+                }
             }
         }
     }
 
-    public void playGame(FairyTale fairyTale) {
-        if (!fairyTale.getGameNames()[0].isEmpty()) {
-            service.publish(mainTopic + "playerData" + fairyTale.getGameNames()[0], id);
-        }
-    }
 }

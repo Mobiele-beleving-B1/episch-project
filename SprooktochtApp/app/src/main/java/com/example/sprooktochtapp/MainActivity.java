@@ -16,9 +16,7 @@ public class MainActivity extends AppCompatActivity {
     private EditText nameInput;
     private ImageView homeImage;
     private ConstraintLayout layout;
-    protected MQTTService service;
-    protected MQTTStorage storage;
-    protected MQTTProfile MQTTProfile;
+    protected MQTTProfile profile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -30,18 +28,15 @@ public class MainActivity extends AppCompatActivity {
         //layout.setBackground(R.drawable.starbackground);
         nameInput.setHint("Voer uw naam in");
 //        beginButton.setText("Begin uw avontuur");
-        storage = new MQTTStorage();
-
-        service = new MQTTService(this,storage);
         beginButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 try {
                     String name = nameInput.getText().toString();
                     Log.d("name",name);
-                    MQTTProfile = new MQTTProfile(name,service,storage);
+                    profile = new MQTTProfile(name);
                     Intent intent = new Intent(getApplicationContext(), TutorialActivity.class);
-                    intent.putExtra("profile", MQTTProfile);
+                    intent.putExtra("profile",profile);
                     startActivity(intent);
                 } catch (Exception e) {
                     Log.e("MyActivity::MyMethod", e.getMessage());
@@ -49,5 +44,10 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
+    }
+
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }

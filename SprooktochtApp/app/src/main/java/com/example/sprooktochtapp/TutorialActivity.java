@@ -32,7 +32,6 @@ public class TutorialActivity extends FragmentActivity {
      * the pager adapter, which sends the pages to view pager widget
      */
     private TutorialPagerAdapter pagerAdapter;
-    protected MQTTService service;
     protected MQTTProfile MQTTProfile;
 
 
@@ -43,7 +42,6 @@ public class TutorialActivity extends FragmentActivity {
         PopUpClass popUpClass = new PopUpClass();
 
         MQTTProfile = (MQTTProfile) getIntent().getSerializableExtra("profile");
-        service = new MQTTService(this,MQTTProfile.getStorage());
         //Instantiate button with intent
         skipButton = (Button) findViewById(R.id.skipButton);
         skipButton.setOnClickListener(new View.OnClickListener() {
@@ -52,7 +50,9 @@ public class TutorialActivity extends FragmentActivity {
                 if (skipButton.getText().equals(App.getAppResources().getString(R.string.skip))) {
                     popUpClass.showPopupWindow(v);
                 } else if (skipButton.getText().equals(App.getAppResources().getString(R.string.go))) {
-                    startActivity(new Intent(TutorialActivity.this, MapActivity.class));
+                    Intent intent = new Intent(TutorialActivity.this, MapActivity.class);
+                    intent.putExtra("profile",MQTTProfile);
+                    startActivity(intent);
                 }
             }
         });
@@ -164,7 +164,9 @@ public class TutorialActivity extends FragmentActivity {
             yesButton.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View view) {
-                    startActivity(new Intent(TutorialActivity.this, MapActivity.class));
+                    Intent intent = new Intent(TutorialActivity.this, MapActivity.class);
+                    intent.putExtra("profile",MQTTProfile);
+                    startActivity(intent);
                     popupWindow.dismiss();
                 }
             });
@@ -178,5 +180,9 @@ public class TutorialActivity extends FragmentActivity {
             });
 
         }
+    }
+    @Override
+    protected void onDestroy() {
+        super.onDestroy();
     }
 }

@@ -14,13 +14,11 @@ import java.util.Map;
 public class MapActivity extends AppCompatActivity {
     private Map<Button, String> buttonMap;
     private String selectedFairyTale;
-    protected MQTTService service;
     protected MQTTProfile MQTTProfile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
-        service = (MQTTService) getIntent().getSerializableExtra("service");
         MQTTProfile = (MQTTProfile) getIntent().getSerializableExtra("profile");
         this.buttonMap = new HashMap<>();
         TextView fairyTaleName = (TextView) findViewById(R.id.activeSprookje);
@@ -63,9 +61,5 @@ public class MapActivity extends AppCompatActivity {
 
     }
 
-    @Override
-    protected void onDestroy() {
-        super.onDestroy();
 
-    }
 }
