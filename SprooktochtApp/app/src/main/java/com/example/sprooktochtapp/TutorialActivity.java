@@ -2,6 +2,7 @@ package com.example.sprooktochtapp;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.support.constraint.ConstraintLayout;
 import android.support.design.widget.TabLayout;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentActivity;
@@ -9,8 +10,12 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentStatePagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.util.Log;
+import android.view.Gravity;
+import android.view.LayoutInflater;
+import android.view.MotionEvent;
 import android.view.View;
 import android.widget.Button;
+import android.widget.PopupWindow;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -30,10 +35,12 @@ public class TutorialActivity extends FragmentActivity {
     protected MQTTService service;
     protected MQTTProfile MQTTProfile;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_tutorial);
+        PopUpClass popUpClass = new PopUpClass();
 
         MQTTProfile = (MQTTProfile) getIntent().getSerializableExtra("profile");
         service = new MQTTService(this,MQTTProfile.getStorage());
@@ -42,12 +49,10 @@ public class TutorialActivity extends FragmentActivity {
         skipButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                try {
-                    Intent intent = new Intent(getApplicationContext(), MapActivity.class);
-                    intent.putExtra("profile", MQTTProfile);
-                    startActivity(intent);
-                } catch (Exception e) {
-                    Log.e("MyActivity::MyMethod", e.getMessage());
+                if (skipButton.getText().equals(App.getAppResources().getString(R.string.skip))) {
+                    popUpClass.showPopupWindow(v);
+                } else if (skipButton.getText().equals(App.getAppResources().getString(R.string.go))) {
+                    startActivity(new Intent(TutorialActivity.this, MapActivity.class));
                 }
             }
         });
@@ -59,8 +64,11 @@ public class TutorialActivity extends FragmentActivity {
          * changes button text based on page number
          */
         tutorialPager.addOnPageChangeListener(new ViewPager.OnPageChangeListener() {
-            public void onPageScrollStateChanged(int state) {}
-            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {}
+            public void onPageScrollStateChanged(int state) {
+            }
+
+            public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
+            }
 
             public void onPageSelected(int position) {
                 if (position == 2) {
@@ -80,6 +88,8 @@ public class TutorialActivity extends FragmentActivity {
         pagerAdapter.add(new Page3());
         tutorialPager.setAdapter(pagerAdapter);
     }
+
+
 
     @Override
     public void onBackPressed() {
@@ -123,6 +133,50 @@ public class TutorialActivity extends FragmentActivity {
         @Override
         public int getCount() {
             return fragments.size();
+        }
+    }
+
+    public class PopUpClass {
+
+        public PopUpClass() {
+        }
+
+
+        //PopupWindow display method
+
+        public void showPopupWindow(final View view) {
+
+            // inflate layout of popup window
+            LayoutInflater inflater = (LayoutInflater)
+                    view.getContext().getSystemService(view.getContext().LAYOUT_INFLATER_SERVICE);
+            View popupView = inflater.inflate(R.layout.popup_window, null);
+
+            // create popup window
+            int width = ConstraintLayout.LayoutParams.WRAP_CONTENT;
+            int height = ConstraintLayout.LayoutParams.WRAP_CONTENT;
+            boolean focusable = true; //
+            final PopupWindow popupWindow = new PopupWindow(popupView, width, height, focusable);
+
+
+            popupWindow.showAtLocation(view, Gravity.CENTER, 0, 0);
+            // initialize elements of window
+            Button yesButton = (Button) popupView.findViewById(R.id.yesButton);
+            yesButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    startActivity(new Intent(TutorialActivity.this, MapActivity.class));
+                    popupWindow.dismiss();
+                }
+            });
+
+            Button noButton = (Button) popupView.findViewById(R.id.noButton);
+            noButton.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    popupWindow.dismiss();
+                }
+            });
+
         }
     }
 }
