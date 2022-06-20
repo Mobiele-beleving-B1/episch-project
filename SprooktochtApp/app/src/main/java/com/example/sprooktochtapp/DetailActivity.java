@@ -2,6 +2,7 @@ package com.example.sprooktochtapp;
 
 import android.content.Intent;
 import android.os.Build;
+import android.os.Message;
 import android.support.annotation.RequiresApi;
 import android.support.v7.app.ActionBar;
 import android.support.v4.content.res.ResourcesCompat;
@@ -38,6 +39,7 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
     private HashMap<String, String> data;
     private final String mainTopic = "avanstibreda/ti/1.4/B1/sprookTocht/";
     private ArrayList<MQTTCallBack> callbacks;
+
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,16 +48,20 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
         setContentView(R.layout.activity_detail);
         callbacks = new ArrayList<>();
         MQTTProfile = (MQTTProfile) getIntent().getSerializableExtra("profile");
+        callbacks.add(MQTTProfile);
         Intent intent = getIntent();
         String fairyTaleInfo = intent.getStringExtra("fairy_tale_info");
         this.selectedFairyTale = FairyTaleManager.getFairyTale(fairyTaleInfo);
-        String clientId = MqttClient.generateClientId();;
+        String clientId = MQTTProfile.getId();
+        ;
         testbutton = (Button) findViewById(R.id.button);
         String finalClientId = clientId;
         testbutton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                publish(mainTopic  + "playerData/"+ selectedFairyTale.getGameNames()[0]  , finalClientId);
+                subscribe(mainTopic + "gameData/" + selectedFairyTale.getGameNames()[0] + "/Score");
+                data.put(mainTopic + "gameData/" + selectedFairyTale.getGameNames()[0] + "/Score", "");
+                publish(mainTopic + "playerData/" + selectedFairyTale.getGameNames()[0], finalClientId);
             }
         });
 
@@ -63,7 +69,7 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
         actionBar.setTitle("Details");
         // shows the back button in action bar
         actionBar.setDisplayHomeAsUpEnabled(true);
-        new Thread(()->{
+        new Thread(() -> {
             client =
                     new MqttAndroidClient(getApplicationContext(), "tcp://broker.hivemq.com:1883",
                             clientId);
@@ -73,12 +79,8 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
-            for (String topic : MQTTProfile.getTopics()) {
-                subscribe(topic);
-            }
         }).start();
 
-    
 
         FairyTaleManager.createFairyTales();
 
@@ -118,9 +120,9 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
 
             @Override
             public void messageArrived(String topic, MqttMessage message) throws Exception {
-                Log.d("MQTT",topic);
+                Log.d("MQTT", topic + ","+ message);
                 if (data.containsKey(topic)) {
-                    String text = String.valueOf(message.getPayload());
+                    String text = message.toString();
                     data.put(topic, text);
                     for (MQTTCallBack callback : callbacks) {
                         callback.receive(topic, text);
@@ -148,7 +150,6 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
     @Override
     protected void onDestroy() {
         super.onDestroy();
-        disconnect();
         client.close();
     }
 
@@ -157,7 +158,7 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
         byte[] encodedPayload = new byte[0];
         try {
             encodedPayload = payload.getBytes("UTF-8");
-            Log.e("MQTT","publish to " + topic + "--" + payload);
+            Log.i("MQTT", "publish to " + topic + "--" + payload);
             MqttMessage message = new MqttMessage(encodedPayload);
             client.publish(topic, message);
             return true;
@@ -171,12 +172,13 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
     public boolean subscribe(String topic) {
         try {
             final boolean[] succes = {false};
-            if (!data.containsKey(topic)&& client != null) {
-                IMqttToken subToken = client.subscribe(topic,0);
+            Log.i("MQTT", String.valueOf(client != null));
+            if (!data.containsKey(topic) && client != null) {
+                IMqttToken subToken = client.subscribe(topic, 0);
                 subToken.setActionCallback(new IMqttActionListener() {
                     @Override
                     public void onSuccess(IMqttToken asyncActionToken) {
-                        Log.d("MQTT", topic);
+                        Log.i("MQTT", topic);
 
                         data.put(topic, "");
                         succes[0] = true;
@@ -186,7 +188,7 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
                     @Override
                     public void onFailure(IMqttToken asyncActionToken,
                                           Throwable exception) {
-                        Log.d("MQTT", "failure you are");
+                        Log.e("MQTT", "failure you are");
 
                         succes[0] = false;
                         // The subscription could not be performed, maybe the user was not
@@ -194,8 +196,8 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
 
                     }
                 });
-            } else if (client == null){
-                Log.e("MQTT","WTF hoe dan maat");
+            } else if (client == null) {
+                Log.e("MQTT", "WTF hoe dan maat");
             }
             return succes[0];
         } catch (MqttException e) {
@@ -204,11 +206,11 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
         }
 
     }
+
     @Override
     public void disconnect() {
         try {
             IMqttToken token = client.disconnect();
-            client.close();
         } catch (MqttException e) {
             e.printStackTrace();
         }

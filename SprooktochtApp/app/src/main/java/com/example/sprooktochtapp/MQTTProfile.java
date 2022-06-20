@@ -29,30 +29,31 @@ public class MQTTProfile implements MQTTCallBack {
 
 
     public MQTTProfile(String name) {
-        games.put("biggenspel", 0.04);
+        games.put("biggenSpel", 0.04);
         this.name = name;
         this.id = MqttClient.generateClientId();
         this.points = 0;
         this.data = new HashMap<>();
         for (String s : games.keySet()) {
             data.put(mainTopic + "gameData/" + s + "/Score", "");
-            Log.d("MQTT","added to topics: "+ mainTopic + "gameData/" + s + "/Score");
+            Log.d("MQTT", "added to topics: " + mainTopic + "gameData/" + s + "/Score");
         }
     }
-    public Set<String> getTopics(){
-        return  data.keySet();
+
+    public Set<String> getTopics() {
+        return data.keySet();
     }
 
 
     private void gameData(String gameName, String dataType, String data) {
-        Log.d("mqtt", "werkt tot hier");
         if (dataType.equals("Score") && data.startsWith(id)) {
             int score = Integer.parseInt(data.replace(id, ""));
             for (String game : games.keySet()) {
+                Log.d("mqtt", game);
                 if (game.equals(gameName)) {
                     points += score * games.get(game);
+                    Log.d("MQTT","Total points: "+points);
                 }
-
             }
         }
     }
@@ -61,22 +62,29 @@ public class MQTTProfile implements MQTTCallBack {
 
     }
 
+    public String getId() {
+        return id;
+    }
+
     public long getPoints() {
         return points;
     }
 
     @Override
     public void receive(String topic, String data) {
-        topic = topic.replace(mainTopic, "");
-        String[] dataNames = (String[]) this.data.keySet().toArray();
-        for (int i = 0; i < this.data.keySet().size(); i++) {
-            if (topic.startsWith(dataNames[i])){
-                if (topic.startsWith("gameData")) {
-                    String[] game = topic.split("/");
-                    gameData(game[1], game[2], data);
+        String topic2 = topic.replace(mainTopic, "");
+
+        Log.d("MQTT", topic + "--" + data);
+        if (topic2.startsWith("gameData")) {
+            topic2 = topic2.replace("gameData/", "");
+            for (String s : this.data.keySet()) {
+                String s2 = s.replace(mainTopic + "gameData/","");
+                if (topic2.equals(s2)) {
+                    this.data.put(topic,data);
+                    String[] game = topic2.split("/");
+                    gameData(game[0], game[1], data);
                 }
             }
         }
     }
-
 }
