@@ -18,7 +18,8 @@
         android:theme="@style/Theme.SprooktochtApp">
         <activity
             android:name=".PrizeActivity"
-            android:exported="false" />
+            android:exported="false"
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".DetailActivity"
             android:exported="false" />
