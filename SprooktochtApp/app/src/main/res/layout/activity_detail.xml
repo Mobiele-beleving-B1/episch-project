@@ -7,15 +7,22 @@
     tools:context=".DetailActivity">
 
     <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
+        android:id="@+id/playButton"
+        android:layout_width="137dp"
         android:layout_height="wrap_content"
-        android:layout_marginStart="319dp"
-        android:layout_marginEnd="4dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginEnd="8dp"
         android:layout_marginBottom="8dp"
-        android:text="Button"
+        android:fontFamily="@font/aclonica"
+        android:text=" Start het spel"
+        android:background="@drawable/roundedbutton2"
+        android:backgroundTint="@color/Main_red"
+        android:textAlignment="center"
+        android:textColor="#F1F0F0"
+        android:textSize="14sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.949"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/scrollView4"
         app:layout_constraintVertical_bias="0.957" />
@@ -55,8 +62,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="8dp"
+        android:layout_marginBottom="8dp"
+        android:fontFamily="@font/aclonica"
         android:text="Voer land"
         android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/scrollView4"
         app:layout_constraintEnd_toEndOf="@+id/fairyTaleName"
         app:layout_constraintStart_toStartOf="@+id/fairyTaleName"
         app:layout_constraintTop_toBottomOf="@+id/fairyTaleName" />
@@ -68,7 +78,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginTop="8dp"
         android:layout_marginEnd="16dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintBottom_toTopOf="@+id/playButton"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -83,6 +93,7 @@
                 android:id="@+id/fairyTaleDescription"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:fontFamily="@font/aclonica"
                 android:text="Voer hier sprookjes info in"
                 android:textSize="16sp" />
         </LinearLayout>

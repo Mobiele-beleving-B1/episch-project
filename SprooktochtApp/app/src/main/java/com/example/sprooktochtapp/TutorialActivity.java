@@ -19,6 +19,8 @@ import android.widget.PopupWindow;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.stream.Collectors;
 
 public class TutorialActivity extends FragmentActivity {
     private Button skipButton;
@@ -164,7 +166,6 @@ public class TutorialActivity extends FragmentActivity {
                     popupWindow.dismiss();
                 }
             });
-
             Button noButton = (Button) popupView.findViewById(R.id.noButton);
             noButton.setOnClickListener(new View.OnClickListener() {
                 @Override
