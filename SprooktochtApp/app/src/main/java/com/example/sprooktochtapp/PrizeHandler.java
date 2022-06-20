@@ -76,7 +76,7 @@ public class PrizeHandler {
                 break;
 
             case SNACK:
-                coupons.add("PriorityPass - " + "Code: S1" + generateCode());
+                coupons.add("Snack coupon - " + "Code: S1" + generateCode());
                 break;
         }
     }
@@ -84,7 +84,7 @@ public class PrizeHandler {
     private String generateCode() {
         int leftLimit = 97; // letter 'a'
         int rightLimit = 122; // letter 'z'
-        int targetStringLength = 10;
+        int targetStringLength = 7;
         Random random = new Random();
         StringBuilder buffer = new StringBuilder(targetStringLength);
         for (int i = 0; i < targetStringLength; i++) {

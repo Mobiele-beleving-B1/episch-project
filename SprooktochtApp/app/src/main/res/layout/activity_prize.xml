@@ -247,33 +247,18 @@
                     app:layout_constraintVertical_bias="0.05" />
 
                 <TextView
-                    android:id="@+id/pointsPrizeText"
-                    android:layout_width="361dp"
-                    android:layout_height="63dp"
+                    android:id="@+id/couponTextView"
+                    android:layout_width="358dp"
+                    android:layout_height="143dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
                     android:background="@drawable/roundedbutton2"
                     android:backgroundTint="#F4F4F4"
                     android:padding="5dp"
-                    android:text="Je hebt niet genoeg punten"
+                    android:text="Jouw coupon codes:"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/prizeScreenTitle"
                     app:layout_constraintTop_toBottomOf="@+id/prizeScreenTitle" />
-
-                <TextView
-                    android:id="@+id/couponTextView"
-                    android:layout_width="0dp"
-                    android:layout_height="97dp"
-                    android:layout_marginTop="12dp"
-                    android:layout_marginEnd="16dp"
-                    android:background="@drawable/roundedbutton2"
-                    android:backgroundTint="#F4F4F4"
-                    android:padding="5dp"
-                    android:text="Coupon codes:"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.071"
-                    app:layout_constraintStart_toStartOf="@+id/pointsPrizeText"
-                    app:layout_constraintTop_toBottomOf="@+id/pointsPrizeText" />
 
             </android.support.constraint.ConstraintLayout>
         </LinearLayout>
