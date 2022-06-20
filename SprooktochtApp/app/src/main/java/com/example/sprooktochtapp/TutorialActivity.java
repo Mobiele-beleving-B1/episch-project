@@ -54,6 +54,7 @@ public class TutorialActivity extends FragmentActivity {
                 } else if (skipButton.getText().equals(App.getAppResources().getString(R.string.go))) {
                     Intent intent = new Intent(TutorialActivity.this, MapActivity.class);
                     intent.putExtra("profile",MQTTProfile);
+                    intent.putExtra("prizeHandler",new PrizeHandler(0, 300));
                     startActivity(intent);
                 }
             }
