@@ -22,11 +22,16 @@
             <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
                 android:layout_height="728dp">
+
                 <ImageView
                     android:id="@+id/backGroundImage"
                     android:layout_width="fill_parent"
                     android:layout_height="fill_parent"
                     android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/starbackground" />
 
                 <android.support.v7.widget.CardView
@@ -228,29 +233,26 @@
                     app:layout_constraintHorizontal_bias="0.11"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.050000012" />
+                    app:layout_constraintVertical_bias="0.022" />
 
                 <TextView
                     android:id="@+id/pointsText"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
                     android:background="@drawable/roundedbutton2"
                     android:backgroundTint="#F4F4F4"
                     android:fontFamily="@font/aclonica"
                     android:padding="5dp"
                     android:text="Jouw punten: "
-                    app:layout_constraintBottom_toBottomOf="parent"
-                    app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintHorizontal_bias="0.632"
-                    app:layout_constraintStart_toStartOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"
-                    app:layout_constraintVertical_bias="0.05" />
+                    app:layout_constraintStart_toStartOf="@+id/prizeScreenTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/prizeScreenTitle" />
 
                 <TextView
                     android:id="@+id/couponTextView"
                     android:layout_width="358dp"
                     android:layout_height="143dp"
-                    android:layout_marginTop="16dp"
+                    android:layout_marginTop="4dp"
                     android:layout_marginEnd="16dp"
                     android:background="@drawable/roundedbutton2"
                     android:backgroundTint="#F4F4F4"
@@ -258,7 +260,7 @@
                     android:text="Jouw coupon codes:"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/prizeScreenTitle"
-                    app:layout_constraintTop_toBottomOf="@+id/prizeScreenTitle" />
+                    app:layout_constraintTop_toBottomOf="@+id/pointsText" />
 
             </android.support.constraint.ConstraintLayout>
         </LinearLayout>

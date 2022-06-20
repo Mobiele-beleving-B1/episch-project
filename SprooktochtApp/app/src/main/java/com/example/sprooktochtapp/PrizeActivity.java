@@ -18,22 +18,22 @@ public class PrizeActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prize);
-
+        int pointsRequired = 300;
+        prizeHandler = new PrizeHandler(900, pointsRequired);
         giftShopDesc = (TextView) findViewById(R.id.giftShopPrizeDesc);
         priorityPassDesc = (TextView) findViewById(R.id.priorityPassPrizeDesc);
         snackDesc = (TextView) findViewById(R.id.snackPrizeDesc);
         couponList = (TextView) findViewById(R.id.couponTextView);
         pointsText = (TextView) findViewById(R.id.pointsText);
         prizeTitle = (TextView) findViewById(R.id.prizeScreenTitle);
-        prizeHandler = new PrizeHandler(900, 300);
         claimGiftShopButton = (Button) findViewById(R.id.giftShopPrizeButton);
         claimSnackButton = (Button) findViewById(R.id.snackPrizeButton);
         claimPriorityPassButton = (Button) findViewById(R.id.priorityPassPrizeButton);
         snackPrizeTitle = (TextView) findViewById(R.id.snackPrizeTitle);
         priorityPassTitle = (TextView) findViewById(R.id.priorityPassPrizeTitle);
-        giftShopDesc.setText("Een 30% korting voucher voor die u naar keuze mag toepassen bij een aankoop in een van onze wonderbaarlijke gift shops!");
-        snackDesc.setText("Een gratis snack bij uw zak friet die u kan aanschaffen bij een van onze smulkramen!");
-        priorityPassDesc.setText("Hiermee kan u bij een balie een pas verzilveren waarmee u bij 2 attracties niet hoeft te wachten in de rij!");
+        giftShopDesc.setText("Een 30% korting voucher voor die u naar keuze mag toepassen bij een aankoop in een van onze wonderbaarlijke gift shops! \nPrijs: " + pointsRequired);
+        snackDesc.setText("Een gratis snack bij uw zak friet die u kan aanschaffen bij een van onze smulkramen!\nPrijs: "  + pointsRequired);
+        priorityPassDesc.setText("Hiermee kan u bij een balie een pas verzilveren waarmee u bij 2 attracties niet hoeft te wachten in de rij!\nPrijs: " + pointsRequired);
         prizeTitle.setText("Coupon winkel");
         claimSnackButton.setOnClickListener(new View.OnClickListener() {
             @Override
