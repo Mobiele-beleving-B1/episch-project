@@ -15,8 +15,8 @@ public class FairyTaleManager {
     }
 
     public static void createFairyTales() {
-        fairyTales.add(new FairyTale("De drie biggetjes", R.drawable.de_drie_biggetjes_uitleg,new String[]{"biggenSpel"}, "unknown", "placeholder game problem", App.getAppResources().getString(R.string.drieBiggetjesHulp)));
-        fairyTales.add(new FairyTale("Hans en Grietje", R.drawable.hans_en_grietje_uitleg,new String[]{}, "unknown", "placeholder game problem", App.getAppResources().getString(R.string.hansEnGrietjeHulp)));
+        fairyTales.add(new FairyTale(App.getAppResources().getString(R.string.drieBiggetjes), R.drawable.de_drie_biggetjes_uitleg,new String[]{"biggenSpel"}, App.getAppResources().getString(R.string.Fabeltjeswoud), App.getAppResources().getString(R.string.drieBiggetjesOpdracht), App.getAppResources().getString(R.string.drieBiggetjesHulp)));
+        fairyTales.add(new FairyTale(App.getAppResources().getString(R.string.hansEnGrietje), R.drawable.hans_en_grietje_uitleg,new String[]{}, App.getAppResources().getString(R.string.Fabeltjeswoud), App.getAppResources().getString(R.string.hansEnGrietjeOpdracht), App.getAppResources().getString(R.string.hansEnGrietjeHulp)));
     }
 
     public static ArrayList<FairyTale> getFairyTales() {

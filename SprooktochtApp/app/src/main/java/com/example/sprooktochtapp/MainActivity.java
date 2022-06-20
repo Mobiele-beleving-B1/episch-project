@@ -26,7 +26,7 @@ public class MainActivity extends AppCompatActivity {
         nameInput = (EditText) findViewById(R.id.nameInput);
         layout = (ConstraintLayout) findViewById(R.id.constraintLayout);
         //layout.setBackground(R.drawable.starbackground);
-        nameInput.setHint("Voer uw naam in");
+        nameInput.setHint(App.getAppResources().getString(R.string.voer_uw_naam_in));
 //        beginButton.setText("Begin uw avontuur");
         beginButton.setOnClickListener(new View.OnClickListener() {
             @Override

@@ -97,8 +97,7 @@ MQTTProfile profile;
     }
 
     private void update() {
-        pointsText.setText("Jouw puntend: " + prizeHandler.getPointsGained() + "/" + prizeHandler.getPointsTotal());
-        profile.setPoints(prizeHandler.getPointsGained());
+        pointsText.setText("Jouw punten: " + prizeHandler.getPointsGained() + "/" + prizeHandler.getPointsTotal());
     }
 
 }

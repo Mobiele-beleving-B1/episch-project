@@ -64,7 +64,7 @@
         android:layout_marginTop="8dp"
         android:layout_marginBottom="8dp"
         android:fontFamily="@font/aclonica"
-        android:text="Voer land"
+        android:text="@string/Fabeltjeswoud"
         android:textSize="20sp"
         app:layout_constraintBottom_toTopOf="@+id/scrollView4"
         app:layout_constraintEnd_toEndOf="@+id/fairyTaleName"
@@ -94,7 +94,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="@font/aclonica"
-                android:text="Voer hier sprookjes info in"
+                android:text="@string/drieBiggetjesOpdracht"
                 android:textSize="16sp" />
         </LinearLayout>
     </ScrollView>

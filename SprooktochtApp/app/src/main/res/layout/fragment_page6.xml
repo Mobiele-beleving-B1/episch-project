@@ -37,7 +37,7 @@
         android:background="@drawable/roundedbutton2"
         android:backgroundTint="#D0F8F3F3"
         android:padding="15dp"
-        android:text="6"
+        android:text="@string/tutorial6"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
