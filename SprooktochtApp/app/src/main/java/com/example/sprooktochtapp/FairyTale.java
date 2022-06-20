@@ -46,8 +46,11 @@ public class FairyTale {
         return gameDescription;
     }
 
+<<<<<<< HEAD
     public String[] getGameNames(){return gameNames;}
 
+=======
+>>>>>>> activity-styling
     public String getTaleDescription() {
         return taleDescription;
     }
