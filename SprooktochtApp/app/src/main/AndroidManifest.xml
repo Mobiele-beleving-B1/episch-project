@@ -2,10 +2,12 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     package="com.example.sprooktochtapp">
+
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+
     <application
         android:name=".App"
         android:allowBackup="true"
@@ -15,14 +17,15 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.SprooktochtApp">
         <activity
+            android:name=".PrizeActivity"
+            android:exported="false" />
+        <activity
             android:name=".DetailActivity"
             android:exported="false" />
         <activity
             android:name=".MapActivity"
             android:exported="false"
             android:theme="@style/AppTheme.NoActionBar" />
-
-
         <activity
             android:name=".TutorialActivity"
             android:exported="false" />
@@ -40,9 +43,8 @@
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />
-        <service android:name="org.eclipse.paho.android.service.MqttService" >
-        </service>
-    </application>
 
+        <service android:name="org.eclipse.paho.android.service.MqttService"></service>
+    </application>
 
 </manifest>

@@ -6,6 +6,7 @@ import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import java.util.HashMap;
@@ -15,10 +16,13 @@ public class MapActivity extends AppCompatActivity {
     private Map<Button, String> buttonMap;
     private String selectedFairyTale;
     protected MQTTProfile MQTTProfile;
+    private ImageView throphyImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+        throphyImage = (ImageView) findViewById(R.id.throphyImage);
+
         MQTTProfile = (MQTTProfile) getIntent().getSerializableExtra("profile");
         this.buttonMap = new HashMap<>();
         TextView fairyTaleName = (TextView) findViewById(R.id.activeSprookje);
@@ -37,7 +41,17 @@ public class MapActivity extends AppCompatActivity {
                 }
             }
         });
-
+        throphyImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Intent intent = new Intent(getApplicationContext(), PrizeActivity.class);
+                    startActivity(intent);
+                } catch (Exception e) {
+                    Log.e("MyActivity::MyMethod", e.getMessage());
+                }
+            }
+        });
         /**
          * Put in the buttons with the corresponding fairy tale
          */
