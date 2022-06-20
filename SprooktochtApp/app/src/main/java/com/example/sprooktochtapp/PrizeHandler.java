@@ -4,11 +4,12 @@ import static android.content.ContentValues.TAG;
 
 import android.util.Log;
 
+import java.io.Serializable;
 import java.nio.charset.Charset;
 import java.util.ArrayList;
 import java.util.Random;
 
-public class PrizeHandler {
+public class PrizeHandler implements Serializable {
     private double pointsGained;
     private double pointsTotal;
     private ArrayList<String> coupons;

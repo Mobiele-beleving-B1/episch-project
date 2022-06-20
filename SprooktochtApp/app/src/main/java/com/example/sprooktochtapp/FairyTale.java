@@ -21,7 +21,7 @@ public class FairyTale {
      * @param gameDescription : describes game situation
      * @param taleDescription : description of the FairyTale, also describe game issue to user
      */
-    public FairyTale(String nameOfTale, int imageOfTaleId, String nameOfLand, String gameDescription, String taleDescription) {
+    public FairyTale(String nameOfTale, int imageOfTaleId,String[] gameNames, String nameOfLand, String gameDescription, String taleDescription) {
         this.nameOfTale = nameOfTale;
         this.gameNames = gameNames;
         this.imageOfTaleId = imageOfTaleId;

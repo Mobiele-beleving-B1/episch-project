@@ -40,6 +40,7 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
     private HashMap<String, String> data;
     private final String mainTopic = "avanstibreda/ti/1.4/B1/sprookTocht/";
     private ArrayList<MQTTCallBack> callbacks;
+    private Intent intent;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -49,6 +50,7 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
         setContentView(R.layout.activity_detail);
         callbacks = new ArrayList<>();
         MQTTProfile = (MQTTProfile) getIntent().getSerializableExtra("profile");
+        intent = (Intent) getIntent().getSerializableExtra("intent");
 
         callbacks.add(MQTTProfile);
         Intent intent = getIntent();
@@ -56,7 +58,7 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
         this.selectedFairyTale = FairyTaleManager.getFairyTale(fairyTaleInfo);
         String clientId = MQTTProfile.getId();
 
-//        testbutton = (Button) findViewById(R.id.button);
+        testbutton = (Button) findViewById(R.id.playButton);
         String finalClientId = clientId;
         testbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -129,6 +131,7 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
                         callback.receive(topic, text);
                     }
                 }
+                intent.putExtra("profile", MQTTProfile);
             }
 
             @Override
@@ -152,7 +155,6 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
     protected void onDestroy() {
         super.onDestroy();
         client.close();
-        super.getIntent().putExtra("profile", MQTTProfile);
     }
 
     @Override

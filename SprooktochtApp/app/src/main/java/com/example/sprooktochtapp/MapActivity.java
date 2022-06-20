@@ -16,6 +16,7 @@ public class MapActivity extends AppCompatActivity {
     private Map<Button, String> buttonMap;
     private String selectedFairyTale;
     protected MQTTProfile MQTTProfile;
+    protected PrizeHandler prizeHandler;
     private Button backButton;
     private ImageView throphyImage;
     @Override
@@ -25,6 +26,8 @@ public class MapActivity extends AppCompatActivity {
         throphyImage = (ImageView) findViewById(R.id.throphyImage);
 
         MQTTProfile = (MQTTProfile) getIntent().getSerializableExtra("profile");
+        prizeHandler = (PrizeHandler) getIntent().getSerializableExtra("prizeHandler");
+        prizeHandler.setPointsTotal(MQTTProfile.getPoints());
         this.buttonMap = new HashMap<>();
         TextView fairyTaleName = (TextView) findViewById(R.id.activeSprookje);
         fairyTaleName.setText("Kies een locatie");
@@ -38,6 +41,7 @@ public class MapActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
                     intent.putExtra("profile", MQTTProfile);
                     intent.putExtra("fairy_tale_info", selectedFairyTale);
+                    intent.putExtra("intent",getIntent());
                     startActivity(intent);
                 } catch (Exception e) {
                     Log.e("MyActivity::MyMethod", e.getMessage());
@@ -49,6 +53,8 @@ public class MapActivity extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     Intent intent = new Intent(getApplicationContext(), PrizeActivity.class);
+                    intent.putExtra("prizeHandler", prizeHandler);
+                    intent.putExtra("intent",getIntent());
                     startActivity(intent);
                 } catch (Exception e) {
                     Log.e("MyActivity::MyMethod", e.getMessage());

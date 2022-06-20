@@ -4,6 +4,7 @@ import android.content.Context;
 import android.os.Build;
 import android.support.annotation.RequiresApi;
 
+import java.sql.Array;
 import java.util.ArrayList;
 
 public class FairyTaleManager {
@@ -14,8 +15,8 @@ public class FairyTaleManager {
     }
 
     public static void createFairyTales() {
-        fairyTales.add(new FairyTale("De drie biggetjes", R.drawable.de_drie_biggetjes_uitleg, "unknown", "placeholder game problem", App.getAppResources().getString(R.string.drieBiggetjesHulp)));
-        fairyTales.add(new FairyTale("Hans en Grietje", R.drawable.hans_en_grietje_uitleg, "unknown", "placeholder game problem", App.getAppResources().getString(R.string.hansEnGrietjeHulp)));
+        fairyTales.add(new FairyTale("De drie biggetjes", R.drawable.de_drie_biggetjes_uitleg,new String[]{"biggenSpel"}, "unknown", "placeholder game problem", App.getAppResources().getString(R.string.drieBiggetjesHulp)));
+        fairyTales.add(new FairyTale("Hans en Grietje", R.drawable.hans_en_grietje_uitleg,new String[]{}, "unknown", "placeholder game problem", App.getAppResources().getString(R.string.hansEnGrietjeHulp)));
     }
 
     public static ArrayList<FairyTale> getFairyTales() {

@@ -24,7 +24,7 @@ public class MQTTProfile implements MQTTCallBack {
     private String id;
     private final String mainTopic = "avanstibreda/ti/1.4/B1/sprookTocht/";
     private HashMap<String, Double> games = new HashMap<>();
-    private long points;
+    private static long points;
     private HashMap<String, String> data;
 
 
@@ -52,10 +52,15 @@ public class MQTTProfile implements MQTTCallBack {
                 Log.d("mqtt", game);
                 if (game.equals(gameName)) {
                     points += score * games.get(game);
+                    savePoint(points);
                     Log.d("MQTT","Total points: "+points);
                 }
             }
         }
+    }
+
+    private void savePoint(long points) {
+
     }
 
     private void checkForAchievements(JsonObject game, int score) {

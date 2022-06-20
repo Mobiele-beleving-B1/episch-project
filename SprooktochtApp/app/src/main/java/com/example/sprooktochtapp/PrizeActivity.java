@@ -13,15 +13,16 @@ public class PrizeActivity extends AppCompatActivity {
     Button claimGiftShopButton, claimSnackButton, claimPriorityPassButton;
     String couponString;
     TextView prizeTitle, prizeDesc, couponList, pointsText, snackDesc, giftShopDesc, priorityPassDesc, snackPrizeTitle, priorityPassTitle;
-
+private Intent intent;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prize);
         int pointsRequired = 300;
-        prizeHandler = new PrizeHandler(900, pointsRequired);
         giftShopDesc = (TextView) findViewById(R.id.giftShopPrizeDesc);
         priorityPassDesc = (TextView) findViewById(R.id.priorityPassPrizeDesc);
+        prizeHandler = (PrizeHandler) getIntent().getSerializableExtra("prizeHandler");
+        intent = (Intent) getIntent().getSerializableExtra("intent");
         snackDesc = (TextView) findViewById(R.id.snackPrizeDesc);
         couponList = (TextView) findViewById(R.id.couponTextView);
         pointsText = (TextView) findViewById(R.id.pointsText);
@@ -45,6 +46,7 @@ public class PrizeActivity extends AppCompatActivity {
                         for (String coupon : prizeHandler.getCoupons()) {
                             couponString += coupon + "\n";
                             couponList.setText(couponString);
+                            intent.putExtra("prizeHandler", prizeHandler);
                         }
                     }
                 } catch (Exception e) {
