@@ -13,10 +13,7 @@ import android.view.View;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.MenuItem;
-<<<<<<< HEAD
 import android.widget.Button;
-=======
->>>>>>> activity-styling
 
 import org.eclipse.paho.android.service.MqttAndroidClient;
 import org.eclipse.paho.client.mqttv3.IMqttActionListener;
@@ -92,7 +89,6 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
         fairyLand = (TextView) findViewById(R.id.landTextView);
         fairyTaleName = (TextView) findViewById(R.id.fairyTaleName);
         gameDescription = (TextView) findViewById(R.id.fairyTaleDescription);
-<<<<<<< HEAD
 
                 findViewById(R.id.fairyTaleName);
 
@@ -101,8 +97,6 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
                 findViewById(R.id.fairyTaleDescription);
 
         fairyTaleImage = (ImageView)
-=======
->>>>>>> activity-styling
 
                 findViewById(R.id.fairyTaleImage);
 
