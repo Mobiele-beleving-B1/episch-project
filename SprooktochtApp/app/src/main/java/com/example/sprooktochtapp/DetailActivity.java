@@ -10,13 +10,11 @@ import android.os.Bundle;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.view.MenuItem;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.ImageView;
 
 public class DetailActivity extends AppCompatActivity {
     TextView fairyTaleName;
-    TextView fairyTaleDescription;
+    TextView fairyLand;
+    TextView gameDescription;
     ImageView fairyTaleImage;
     FairyTale selectedFairyTale;
 
@@ -38,14 +36,16 @@ public class DetailActivity extends AppCompatActivity {
 
         FairyTaleManager.createFairyTales();
 
-        fairyTaleName = (TextView) findViewById(R.id.fairyTaleName);
-        fairyTaleDescription = (TextView) findViewById(R.id.fairyTaleDescription);
         fairyTaleImage = (ImageView) findViewById(R.id.fairyTaleImage);
+        fairyLand = (TextView) findViewById(R.id.landTextView);
+        fairyTaleName = (TextView) findViewById(R.id.fairyTaleName);
+        gameDescription = (TextView) findViewById(R.id.fairyTaleDescription);
 
 
 
         fairyTaleName.setText(selectedFairyTale.getNameOfTale());
-        fairyTaleDescription.setText(selectedFairyTale.getTaleDescription());
+        fairyLand.setText(selectedFairyTale.getNameOfLand());
+        gameDescription.setText(selectedFairyTale.getGameDescription());
         fairyTaleImage.setImageDrawable(ResourcesCompat.getDrawable(getResources(), selectedFairyTale.getImageOfTaleId(), null));
     }
 
