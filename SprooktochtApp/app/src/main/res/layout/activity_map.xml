@@ -31,17 +31,17 @@
         android:id="@+id/pointsBarText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
+        android:layout_marginStart="40dp"
         android:background="@drawable/roundedbutton2"
         android:backgroundTint="#CD7272"
         android:fontFamily="@font/aclonica"
         android:padding="8dp"
-        android:text="@string/voortgang"
+        android:text="Voortgang en couponshop: "
         android:textColor="#F4F0F0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.060000002" />
+        app:layout_constraintVertical_bias="0.122" />
 
     <ImageView
         android:id="@+id/rightBranchMain"
@@ -53,22 +53,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent" />
-
-    <ProgressBar
-        android:id="@+id/pointsBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="239dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="8dp"
-        android:background="@drawable/roundedbutton2"
-        android:backgroundTint="#CD7272"
-        android:paddingLeft="9dp"
-
-        android:paddingRight="9dp"
-        android:progress="30"
-        android:progressTint="@color/white"
-        app:layout_constraintStart_toStartOf="@+id/pointsBarText"
-        app:layout_constraintTop_toBottomOf="@+id/pointsBarText" />
 
     <TextView
         android:id="@+id/activeSprookje"
@@ -92,14 +76,15 @@
 
     <ImageView
         android:id="@+id/throphyImage"
-        android:layout_width="37dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="16dp"
+        android:layout_width="49dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="24dp"
         android:background="@drawable/roundedbutton2"
         android:contentDescription="@string/throphyimage"
         android:padding="8dp"
-        app:layout_constraintStart_toEndOf="@+id/pointsBar"
-        app:layout_constraintTop_toTopOf="@+id/pointsBar"
+        app:layout_constraintBottom_toBottomOf="@+id/pointsBarText"
+        app:layout_constraintStart_toEndOf="@+id/pointsBarText"
+        app:layout_constraintTop_toTopOf="@+id/pointsBarText"
         app:srcCompat="@drawable/throphy"
         tools:ignore="ImageContrastCheck" />
 
@@ -108,13 +93,12 @@
         android:layout_width="0dp"
         android:layout_height="415dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
         android:layout_marginEnd="20dp"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pointsBar"
-        app:srcCompat="@drawable/essteling_plattegrond_b1" />
+        app:srcCompat="@drawable/essteling_plattegrond_b1"
+        tools:layout_editor_absoluteY="143dp" />
 
     <ImageView
         android:id="@+id/topRightLogMap"
