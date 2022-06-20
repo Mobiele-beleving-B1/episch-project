@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">SprooktochtApp</string>
-    <string name="beginButton">Begin</string>
-    <string name="sprooktocht">SprookTocht</string>
+    <string name="beginButton" translatable="false">Begin</string>
+    <string name="sprooktocht" translatable="false">SprookTocht</string>
     <string name="voer_uw_naam_in">Voer uw naam in</string>
     <string name="sprookje_details_foto">Sprookje details foto</string>
     <string name="voer_hier_sprookjes_info_in">Voer hier sprookjes info in</string>
@@ -12,9 +12,9 @@
     <string name="activesprookje">ActiveSprookje</string>
     <string name="voortgang">Voortgang:</string>
     <string name="plattegrond">Plattegrond</string>
-    <string name="throphyimage">throphyImage</string>
-    <string name="viewpager_description">Allows user to horizontally scroll through pages</string>
-    <string name="tabdots_description">Shows on which page the user is</string>
+    <string name="throphyimage" translatable="false">throphyImage</string>
+    <string name="viewpager_description" translatable="false">Allows user to horizontally scroll through pages</string>
+    <string name="tabdots_description" translatable="false">Shows on which page the user is</string>
     <string name="drieBiggetjesTitel">De drie biggetjes</string>
     <string name="drieBiggetjesHulp">De drie biggetjes hebben jouw hulp nodig. Ze hebben allemaal
         een huisje gebouwd en willen graag weten hoe sterk elk huisje is. Er schijnt namelijk een
@@ -86,8 +86,7 @@ is gebeurd, dat is weer een ander verhaal.</string>
         het niveau, des te meer punten je kunt verdienen! Als je het spel klaar hebt krijg je alle
         punten die je verdiend hebt op je telefoon staan, verzamel zo veel mogelijk punten om vette
         prijzen te kunnen winnen!</string>
-    <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="wolfEnBiggetjes">De wolf en de drie biggetjes</string>
+    <string name="wolfEnBiggetjes">De drie biggetjes</string>
     <string name="skip">Sla over</string>
     <string name="go">Ga verder</string>
 </resources>
