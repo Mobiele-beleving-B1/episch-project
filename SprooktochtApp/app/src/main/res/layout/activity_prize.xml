@@ -27,9 +27,10 @@
                     android:id="@+id/cardView2"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
-                    tools:layout_editor_absoluteY="300dp">
+                    app:layout_constraintTop_toBottomOf="@+id/textView9">
 
                     <android.support.constraint.ConstraintLayout
                         android:layout_width="match_parent"
@@ -58,12 +59,27 @@
                             android:id="@+id/snackPrizeDesc"
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="16dp"
                             android:text="TextView"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="@+id/snackPrizeTitle"
                             app:layout_constraintTop_toBottomOf="@+id/snackPrizeTitle" />
+
+                        <Button
+                            android:id="@+id/snackPrizeButton"
+                            android:layout_width="92dp"
+                            android:layout_height="48dp"
+                            android:layout_marginStart="16dp"
+                            android:background="@drawable/roundedbutton"
+                            android:backgroundTint="#FFB32727"
+                            android:fontFamily="@font/aclonica"
+                            android:text="Claim"
+                            android:textColor="#F3F3F3"
+                            app:layout_constraintBottom_toBottomOf="@+id/snackPrizeTitle"
+                            app:layout_constraintStart_toEndOf="@+id/snackPrizeTitle"
+                            app:layout_constraintTop_toTopOf="@+id/snackPrizeTitle" />
+
                     </android.support.constraint.ConstraintLayout>
 
                 </android.support.v7.widget.CardView>
@@ -97,7 +113,6 @@
                             android:layout_marginStart="12dp"
                             android:layout_marginTop="16dp"
                             android:text="30% korting!"
-                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/priorityPassPrizeImage"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -105,12 +120,27 @@
                             android:id="@+id/giftShopPrizeDesc"
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="16dp"
                             android:text="TextView"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="@+id/giftShopPrizeTitle"
                             app:layout_constraintTop_toBottomOf="@+id/giftShopPrizeTitle" />
+
+                        <Button
+                            android:id="@+id/giftShopPrizeButton"
+                            android:layout_width="92dp"
+                            android:layout_height="48dp"
+                            android:layout_marginStart="16dp"
+                            android:background="@drawable/roundedbutton"
+                            android:backgroundTint="#FFB32727"
+                            android:fontFamily="@font/aclonica"
+                            android:text="Claim"
+                            android:textColor="#F3F3F3"
+                            app:layout_constraintBottom_toBottomOf="@+id/giftShopPrizeTitle"
+                            app:layout_constraintStart_toEndOf="@+id/giftShopPrizeTitle"
+                            app:layout_constraintTop_toTopOf="@+id/giftShopPrizeTitle" />
+
                     </android.support.constraint.ConstraintLayout>
 
                 </android.support.v7.widget.CardView>
@@ -144,7 +174,6 @@
                             android:layout_marginStart="12dp"
                             android:layout_marginTop="16dp"
                             android:text="snackPrizeTitle"
-                            app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toEndOf="@+id/snackPrizeImage"
                             app:layout_constraintTop_toTopOf="parent" />
 
@@ -152,12 +181,26 @@
                             android:id="@+id/priorityPassPrizeDesc"
                             android:layout_width="0dp"
                             android:layout_height="0dp"
-                            android:layout_marginTop="10dp"
+                            android:layout_marginTop="16dp"
                             android:text="TextView"
                             app:layout_constraintBottom_toBottomOf="parent"
                             app:layout_constraintEnd_toEndOf="parent"
                             app:layout_constraintStart_toStartOf="@+id/priorityPassPrizeTitle"
                             app:layout_constraintTop_toBottomOf="@+id/priorityPassPrizeTitle" />
+
+                        <Button
+                            android:id="@+id/priorityPassPrizeButton"
+                            android:layout_width="92dp"
+                            android:layout_height="48dp"
+                            android:layout_marginStart="16dp"
+                            android:background="@drawable/roundedbutton"
+                            android:backgroundTint="#FFB32727"
+                            android:fontFamily="@font/aclonica"
+                            android:text="Claim"
+                            android:textColor="#F3F3F3"
+                            app:layout_constraintBottom_toBottomOf="@+id/priorityPassPrizeTitle"
+                            app:layout_constraintStart_toEndOf="@+id/priorityPassPrizeTitle"
+                            app:layout_constraintTop_toTopOf="@+id/priorityPassPrizeTitle" />
                     </android.support.constraint.ConstraintLayout>
 
                 </android.support.v7.widget.CardView>
@@ -166,6 +209,10 @@
                     android:id="@+id/prizeScreenTitle"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
+                    android:background="@drawable/roundedbutton2"
+                    android:backgroundTint="#F4F4F4"
+                    android:fontFamily="@font/aclonica"
+                    android:padding="5dp"
                     android:text="TextView"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -176,16 +223,32 @@
 
                 <TextView
                     android:id="@+id/pointsPrizeText"
-                    android:layout_width="0dp"
-                    android:layout_height="0dp"
+                    android:layout_width="361dp"
+                    android:layout_height="63dp"
                     android:layout_marginTop="16dp"
                     android:layout_marginEnd="16dp"
-                    android:layout_marginBottom="8dp"
+                    android:background="@drawable/roundedbutton2"
+                    android:backgroundTint="#F4F4F4"
+                    android:padding="5dp"
                     android:text="TextView"
-                    app:layout_constraintBottom_toTopOf="@+id/cardView2"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="@+id/prizeScreenTitle"
                     app:layout_constraintTop_toBottomOf="@+id/prizeScreenTitle" />
+
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="0dp"
+                    android:layout_height="97dp"
+                    android:layout_marginTop="12dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/roundedbutton2"
+                    android:padding="5dp"
+                    android:text="TextView"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.071"
+                    app:layout_constraintStart_toStartOf="@+id/pointsPrizeText"
+                    app:layout_constraintTop_toBottomOf="@+id/pointsPrizeText"
+                    android:backgroundTint="#F4F4F4" />
 
             </android.support.constraint.ConstraintLayout>
         </LinearLayout>
