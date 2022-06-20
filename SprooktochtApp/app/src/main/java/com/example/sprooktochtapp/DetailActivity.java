@@ -49,6 +49,7 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
         setContentView(R.layout.activity_detail);
         callbacks = new ArrayList<>();
         MQTTProfile = (MQTTProfile) getIntent().getSerializableExtra("profile");
+
         callbacks.add(MQTTProfile);
         Intent intent = getIntent();
         String fairyTaleInfo = intent.getStringExtra("fairy_tale_info");
@@ -99,7 +100,6 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
         fairyTaleImage = (ImageView)
 
                 findViewById(R.id.fairyTaleImage);
-
 
         fairyTaleName.setText(selectedFairyTale.getNameOfTale());
         fairyLand.setText(selectedFairyTale.getNameOfLand());
@@ -152,6 +152,7 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
     protected void onDestroy() {
         super.onDestroy();
         client.close();
+        super.getIntent().putExtra("profile", MQTTProfile);
     }
 
     @Override
