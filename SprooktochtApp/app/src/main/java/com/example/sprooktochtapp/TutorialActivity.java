@@ -19,6 +19,8 @@ import android.widget.PopupWindow;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+import java.util.stream.Collectors;
 
 public class TutorialActivity extends FragmentActivity {
     private Button skipButton;
@@ -71,7 +73,7 @@ public class TutorialActivity extends FragmentActivity {
             }
 
             public void onPageSelected(int position) {
-                if (position == 2) {
+                if (position == 5) {
                     skipButton.setText(R.string.go);
                 } else {
                     skipButton.setText(R.string.skip);
@@ -86,6 +88,11 @@ public class TutorialActivity extends FragmentActivity {
         pagerAdapter.add(new Page1());
         pagerAdapter.add(new Page2());
         pagerAdapter.add(new Page3());
+        pagerAdapter.add(new Page4());
+        pagerAdapter.add(new Page5());
+        pagerAdapter.add(new Page6());
+
+
         tutorialPager.setAdapter(pagerAdapter);
     }
 
@@ -170,7 +177,6 @@ public class TutorialActivity extends FragmentActivity {
                     popupWindow.dismiss();
                 }
             });
-
             Button noButton = (Button) popupView.findViewById(R.id.noButton);
             noButton.setOnClickListener(new View.OnClickListener() {
                 @Override

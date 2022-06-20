@@ -23,7 +23,7 @@
         android:adjustViewBounds="false"
         android:scaleType="centerInside"
         android:src="@drawable/essteling_plattegrond_b1"
-        app:layout_constraintBottom_toTopOf="@+id/textView5"
+        app:layout_constraintBottom_toTopOf="@+id/tutorialText3"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.51"
         app:layout_constraintStart_toStartOf="parent"
@@ -31,7 +31,7 @@
         app:layout_constraintVertical_bias="0.65999997" />
 
     <TextView
-        android:id="@+id/textView5"
+        android:id="@+id/tutorialText3"
         android:layout_width="355dp"
         android:layout_height="275dp"
         android:background="@drawable/roundedbutton2"

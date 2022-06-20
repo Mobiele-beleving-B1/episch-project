@@ -16,6 +16,7 @@ public class MapActivity extends AppCompatActivity {
     private Map<Button, String> buttonMap;
     private String selectedFairyTale;
     protected MQTTProfile MQTTProfile;
+    private Button backButton;
     private ImageView throphyImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,6 +29,8 @@ public class MapActivity extends AppCompatActivity {
         TextView fairyTaleName = (TextView) findViewById(R.id.activeSprookje);
         fairyTaleName.setText("Kies een locatie");
         Button infoButton = (Button) findViewById(R.id.infoButton);
+        backButton = (Button) findViewById(R.id.backButton);
+
         infoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -46,6 +49,17 @@ public class MapActivity extends AppCompatActivity {
             public void onClick(View view) {
                 try {
                     Intent intent = new Intent(getApplicationContext(), PrizeActivity.class);
+                    startActivity(intent);
+                } catch (Exception e) {
+                    Log.e("MyActivity::MyMethod", e.getMessage());
+                }
+            }
+        });
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Intent intent = new Intent(getApplicationContext(), TutorialActivity.class);
                     startActivity(intent);
                 } catch (Exception e) {
                     Log.e("MyActivity::MyMethod", e.getMessage());

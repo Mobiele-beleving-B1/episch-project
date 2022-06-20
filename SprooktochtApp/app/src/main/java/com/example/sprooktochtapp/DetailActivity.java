@@ -30,7 +30,8 @@ import java.util.HashMap;
 
 public class DetailActivity extends AppCompatActivity implements MQTTService {
     TextView fairyTaleName;
-    TextView fairyTaleDescription;
+    TextView fairyLand;
+    TextView gameDescription;
     ImageView fairyTaleImage;
     FairyTale selectedFairyTale;
     Button testbutton;
@@ -53,8 +54,8 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
         String fairyTaleInfo = intent.getStringExtra("fairy_tale_info");
         this.selectedFairyTale = FairyTaleManager.getFairyTale(fairyTaleInfo);
         String clientId = MQTTProfile.getId();
-        ;
-        testbutton = (Button) findViewById(R.id.button);
+
+//        testbutton = (Button) findViewById(R.id.button);
         String finalClientId = clientId;
         testbutton.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -84,11 +85,14 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
 
         FairyTaleManager.createFairyTales();
 
-        fairyTaleName = (TextView)
+        fairyTaleImage = (ImageView) findViewById(R.id.fairyTaleImage);
+        fairyLand = (TextView) findViewById(R.id.landTextView);
+        fairyTaleName = (TextView) findViewById(R.id.fairyTaleName);
+        gameDescription = (TextView) findViewById(R.id.fairyTaleDescription);
 
                 findViewById(R.id.fairyTaleName);
 
-        fairyTaleDescription = (TextView)
+//        fairyTaleDescription = (TextView)
 
                 findViewById(R.id.fairyTaleDescription);
 
@@ -98,12 +102,9 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
 
 
         fairyTaleName.setText(selectedFairyTale.getNameOfTale());
-        fairyTaleDescription.setText(selectedFairyTale.getTaleDescription());
-        fairyTaleImage.setImageDrawable(ResourcesCompat.getDrawable(
-
-                getResources(), selectedFairyTale.
-
-                        getImageOfTaleId(), null));
+        fairyLand.setText(selectedFairyTale.getNameOfLand());
+        gameDescription.setText(selectedFairyTale.getGameDescription());
+        fairyTaleImage.setImageDrawable(ResourcesCompat.getDrawable(getResources(), selectedFairyTale.getImageOfTaleId(), null));
     }
 
     private void connect() {
