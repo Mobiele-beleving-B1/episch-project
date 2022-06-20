@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".PrizeActivity">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <android.support.constraint.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="728dp">
+
+                <ImageView
+                    android:id="@+id/backGroundImage"
+                    android:layout_width="fill_parent"
+                    android:layout_height="fill_parent"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:srcCompat="@drawable/starbackground" />
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardView2"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/roundedbutton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/couponTextView">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/giftShopPrize"
+                            android:layout_width="130dp"
+                            android:layout_height="130dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/snack" />
+
+                        <TextView
+                            android:id="@+id/snackPrizeTitle"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="16dp"
+                            android:text="snackPrizeTitle"
+                            app:layout_constraintStart_toEndOf="@+id/giftShopPrize"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/snackPrizeDesc"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="16dp"
+                            android:text="TextView"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/snackPrizeTitle"
+                            app:layout_constraintTop_toBottomOf="@+id/snackPrizeTitle" />
+
+                        <Button
+                            android:id="@+id/snackPrizeButton"
+                            android:layout_width="92dp"
+                            android:layout_height="48dp"
+                            android:layout_marginStart="16dp"
+                            android:background="@drawable/roundedbutton"
+                            android:backgroundTint="#FFB32727"
+                            android:fontFamily="@font/aclonica"
+                            android:text="Claim"
+                            android:textColor="#F3F3F3"
+                            app:layout_constraintBottom_toBottomOf="@+id/snackPrizeTitle"
+                            app:layout_constraintStart_toEndOf="@+id/snackPrizeTitle"
+                            app:layout_constraintTop_toTopOf="@+id/snackPrizeTitle" />
+
+                    </android.support.constraint.ConstraintLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardView"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="22dp"
+                    android:background="@drawable/roundedbutton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView2">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/priorityPassPrizeImage"
+                            android:layout_width="130dp"
+                            android:layout_height="130dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/korting" />
+
+                        <TextView
+                            android:id="@+id/giftShopPrizeTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="18dp"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="16dp"
+                            android:text="30% korting!"
+                            app:layout_constraintStart_toEndOf="@+id/priorityPassPrizeImage"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/giftShopPrizeDesc"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="16dp"
+                            android:text="TextView"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/giftShopPrizeTitle"
+                            app:layout_constraintTop_toBottomOf="@+id/giftShopPrizeTitle" />
+
+                        <Button
+                            android:id="@+id/giftShopPrizeButton"
+                            android:layout_width="92dp"
+                            android:layout_height="48dp"
+                            android:layout_marginStart="16dp"
+                            android:background="@drawable/roundedbutton"
+                            android:backgroundTint="#FFB32727"
+                            android:fontFamily="@font/aclonica"
+                            android:text="Claim"
+                            android:textColor="#F3F3F3"
+                            app:layout_constraintBottom_toBottomOf="@+id/giftShopPrizeTitle"
+                            app:layout_constraintStart_toEndOf="@+id/giftShopPrizeTitle"
+                            app:layout_constraintTop_toTopOf="@+id/giftShopPrizeTitle" />
+
+                    </android.support.constraint.ConstraintLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <android.support.v7.widget.CardView
+                    android:id="@+id/cardView3"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="16dp"
+                    android:background="@drawable/roundedbutton"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/cardView">
+
+                    <android.support.constraint.ConstraintLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent">
+
+                        <ImageView
+                            android:id="@+id/snackPrizeImage"
+                            android:layout_width="130dp"
+                            android:layout_height="130dp"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintStart_toStartOf="parent"
+                            app:layout_constraintTop_toTopOf="parent"
+                            app:srcCompat="@drawable/prioritypass" />
+
+                        <TextView
+                            android:id="@+id/priorityPassPrizeTitle"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="12dp"
+                            android:layout_marginTop="16dp"
+                            android:text="snackPrizeTitle"
+                            app:layout_constraintStart_toEndOf="@+id/snackPrizeImage"
+                            app:layout_constraintTop_toTopOf="parent" />
+
+                        <TextView
+                            android:id="@+id/priorityPassPrizeDesc"
+                            android:layout_width="0dp"
+                            android:layout_height="0dp"
+                            android:layout_marginTop="16dp"
+                            android:text="TextView"
+                            app:layout_constraintBottom_toBottomOf="parent"
+                            app:layout_constraintEnd_toEndOf="parent"
+                            app:layout_constraintStart_toStartOf="@+id/priorityPassPrizeTitle"
+                            app:layout_constraintTop_toBottomOf="@+id/priorityPassPrizeTitle" />
+
+                        <Button
+                            android:id="@+id/priorityPassPrizeButton"
+                            android:layout_width="92dp"
+                            android:layout_height="48dp"
+                            android:layout_marginStart="16dp"
+                            android:background="@drawable/roundedbutton"
+                            android:backgroundTint="#FFB32727"
+                            android:fontFamily="@font/aclonica"
+                            android:text="Claim"
+                            android:textColor="#F3F3F3"
+                            app:layout_constraintBottom_toBottomOf="@+id/priorityPassPrizeTitle"
+                            app:layout_constraintStart_toEndOf="@+id/priorityPassPrizeTitle"
+                            app:layout_constraintTop_toTopOf="@+id/priorityPassPrizeTitle" />
+                    </android.support.constraint.ConstraintLayout>
+
+                </android.support.v7.widget.CardView>
+
+                <TextView
+                    android:id="@+id/prizeScreenTitle"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/roundedbutton2"
+                    android:backgroundTint="#F4F4F4"
+                    android:fontFamily="@font/aclonica"
+                    android:padding="5dp"
+                    android:text="TextView"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.11"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.022" />
+
+                <TextView
+                    android:id="@+id/pointsText"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="4dp"
+                    android:background="@drawable/roundedbutton2"
+                    android:backgroundTint="#F4F4F4"
+                    android:fontFamily="@font/aclonica"
+                    android:padding="5dp"
+                    android:text="Jouw punten: "
+                    app:layout_constraintStart_toStartOf="@+id/prizeScreenTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/prizeScreenTitle" />
+
+                <TextView
+                    android:id="@+id/couponTextView"
+                    android:layout_width="358dp"
+                    android:layout_height="143dp"
+                    android:layout_marginTop="4dp"
+                    android:layout_marginEnd="16dp"
+                    android:background="@drawable/roundedbutton2"
+                    android:backgroundTint="#F4F4F4"
+                    android:padding="5dp"
+                    android:text="Jouw coupon codes:"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/prizeScreenTitle"
+                    app:layout_constraintTop_toBottomOf="@+id/pointsText" />
+
+            </android.support.constraint.ConstraintLayout>
+        </LinearLayout>
+    </ScrollView>
+
+</android.support.constraint.ConstraintLayout>

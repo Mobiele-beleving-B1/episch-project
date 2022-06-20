@@ -1,7 +1,6 @@
 package com.example.sprooktochtapp;
 
 import android.content.Intent;
-import android.content.res.Resources;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -16,21 +15,31 @@ import java.util.Map;
 public class MapActivity extends AppCompatActivity {
     private Map<Button, String> buttonMap;
     private String selectedFairyTale;
-
+    protected MQTTProfile MQTTProfile;
+    protected PrizeHandler prizeHandler;
+    private Button backButton;
+    private ImageView throphyImage;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_map);
+        throphyImage = (ImageView) findViewById(R.id.throphyImage);
 
+        MQTTProfile = (MQTTProfile) getIntent().getSerializableExtra("profile");
+        prizeHandler = (PrizeHandler) getIntent().getSerializableExtra("prizeHandler");
+        prizeHandler.setPointsGained(MQTTProfile.getPoints());
         this.buttonMap = new HashMap<>();
         TextView fairyTaleName = (TextView) findViewById(R.id.activeSprookje);
         fairyTaleName.setText("Kies een locatie");
         Button infoButton = (Button) findViewById(R.id.infoButton);
+        backButton = (Button) findViewById(R.id.backButton);
+
         infoButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 try {
                     Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
+                    intent.putExtra("profile", MQTTProfile);
                     intent.putExtra("fairy_tale_info", selectedFairyTale);
                     startActivity(intent);
                 } catch (Exception e) {
@@ -38,7 +47,30 @@ public class MapActivity extends AppCompatActivity {
                 }
             }
         });
-
+        throphyImage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Intent intent = new Intent(getApplicationContext(), PrizeActivity.class);
+                    intent.putExtra("prizeHandler", prizeHandler);
+                    intent.putExtra("profile", MQTTProfile);
+                    startActivity(intent);
+                } catch (Exception e) {
+                    Log.e("MyActivity::MyMethod", e.getMessage());
+                }
+            }
+        });
+        backButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                try {
+                    Intent intent = new Intent(getApplicationContext(), TutorialActivity.class);
+                    startActivity(intent);
+                } catch (Exception e) {
+                    Log.e("MyActivity::MyMethod", e.getMessage());
+                }
+            }
+        });
         /**
          * Put in the buttons with the corresponding fairy tale
          */
@@ -61,4 +93,6 @@ public class MapActivity extends AppCompatActivity {
         }
 
     }
+
+
 }

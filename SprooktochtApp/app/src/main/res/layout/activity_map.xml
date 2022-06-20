@@ -24,24 +24,29 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="1.0"
+        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/starbackground" />
 
     <TextView
         android:id="@+id/pointsBarText"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginStart="44dp"
-        android:background="#F6F6F6"
-        android:text="@string/voortgang"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="8dp"
+        android:background="@drawable/roundedbutton2"
+        android:backgroundTint="#CD7272"
+        android:fontFamily="@font/aclonica"
+        android:padding="8dp"
+        android:text="Voortgang en couponshop: "
+        android:textColor="#F4F0F0"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.060000002" />
+        app:layout_constraintTop_toBottomOf="@+id/backButton"
+        app:layout_constraintVertical_bias="0.0" />
 
     <ImageView
         android:id="@+id/rightBranchMain"
-        android:layout_width="410dp"
+        android:layout_width="0dp"
         android:layout_height="119dp"
         android:scaleType="fitXY"
         android:src="@drawable/wood_2"
@@ -50,27 +55,18 @@
         app:layout_constraintHorizontal_bias="0.52"
         app:layout_constraintStart_toStartOf="parent" />
 
-    <ProgressBar
-        android:id="@+id/pointsBar"
-        style="?android:attr/progressBarStyleHorizontal"
-        android:layout_width="239dp"
-        android:layout_height="38dp"
-        android:layout_marginTop="8dp"
-        android:background="#F6F6F6"
-        android:progress="30"
-        android:progressTint="#00BCD4"
-        app:layout_constraintStart_toStartOf="@+id/pointsBarText"
-        app:layout_constraintTop_toBottomOf="@+id/pointsBarText" />
-
     <TextView
         android:id="@+id/activeSprookje"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_marginStart="32dp"
-        android:layout_marginEnd="50dp"
-        android:background="#F6F6F6"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:background="@drawable/roundedbutton2"
+        android:backgroundTint="#CD7272"
+        android:fontFamily="@font/aclonica"
         android:gravity="center"
         android:text="@string/activesprookje"
+        android:textColor="#FFFFFF"
         android:textSize="18sp"
         app:autoSizeTextType="none"
         app:layout_constraintBottom_toBottomOf="@+id/infoButton"
@@ -80,28 +76,16 @@
         app:layout_constraintTop_toTopOf="@+id/infoButton" />
 
     <ImageView
-        android:id="@+id/throphyImage"
-        android:layout_width="37dp"
-        android:layout_height="39dp"
-        android:layout_marginStart="16dp"
-        android:background="#F6F6F6"
-        android:contentDescription="@string/throphyimage"
-        app:layout_constraintStart_toEndOf="@+id/pointsBar"
-        app:layout_constraintTop_toTopOf="@+id/pointsBar"
-        app:srcCompat="@drawable/throphy"
-        tools:ignore="ImageContrastCheck" />
-
-    <ImageView
         android:id="@+id/mapImage"
         android:layout_width="0dp"
         android:layout_height="415dp"
         android:layout_marginStart="20dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="23dp"
         android:layout_marginEnd="20dp"
         android:scaleType="centerInside"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/pointsBar"
+        app:layout_constraintTop_toBottomOf="@+id/pointsBarText"
         app:srcCompat="@drawable/essteling_plattegrond_b1" />
 
     <ImageView
@@ -114,6 +98,20 @@
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/wood_1" />
+
+    <ImageView
+        android:id="@+id/throphyImage"
+        android:layout_width="49dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="24dp"
+        android:background="@drawable/roundedbutton2"
+        android:contentDescription="@string/throphyimage"
+        android:padding="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/pointsBarText"
+        app:layout_constraintStart_toEndOf="@+id/pointsBarText"
+        app:layout_constraintTop_toTopOf="@+id/pointsBarText"
+        app:srcCompat="@drawable/throphy"
+        tools:ignore="ImageContrastCheck" />
 
     <Button
         android:id="@+id/drieBiggetjesButton"
@@ -148,11 +146,29 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginEnd="20dp"
-        android:text="INFO"
+        android:background="@drawable/roundedbutton"
+        android:backgroundTint="@color/Main_red"
+        android:text="Meer info"
+        android:textColor="#EFEDED"
         android:textSize="12sp"
         app:layout_constraintBottom_toTopOf="@+id/recyclerView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/mapImage"
         app:layout_constraintVertical_bias="0.085" />
+
+    <Button
+        android:id="@+id/backButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:background="@drawable/roundedbutton2"
+        android:fontFamily="@font/aclonica"
+        android:isScrollContainer="false"
+        android:text="Back"
+        android:textColor="#ECECEC"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.12"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
 </android.support.constraint.ConstraintLayout>
