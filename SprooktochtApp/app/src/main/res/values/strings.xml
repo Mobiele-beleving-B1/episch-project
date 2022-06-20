@@ -15,18 +15,76 @@
     <string name="throphyimage">throphyImage</string>
     <string name="viewpager_description">Allows user to horizontally scroll through pages</string>
     <string name="tabdots_description">Shows on which page the user is</string>
-    <string name="drie_biggetjes">Er waren eens drie kleine biggetjes, allemaal op avontuur in de grote wereld. Ze waren broers van elkaar en elk van hun was van plan
+    <string name="drieBiggetjesTitel">De drie biggetjes</string>
+    <string name="drieBiggetjesHulp">De drie biggetjes hebben jouw hulp nodig. Ze hebben allemaal
+        een huisje gebouwd en willen graag weten hoe sterk elk huisje is. Er schijnt namelijk een
+        grote boze wolf in de buurt te zijn en de biggetjes willen liever niet in de maag van de
+        wolf terecht komen. Lukt het jou om alle huisjes omver te blazen?</string>
+    <string name="drieBiggetjesOpdracht">De 3 biggetjes hebben allemaal een eigen huis gebouwd om
+        zich te beschermen tegen de grote boze wolf, maar ze weten niet zeker of hun huisjes
+        allemaal wel stevig genoeg zijn.Kun jij kijken of jij ze om kan blazen door in de grote
+        ventilator te blazen?
+</string>
+    <string name="drieBiggetjes">Er waren eens drie kleine biggetjes, allemaal op avontuur in de grote wereld. Ze waren broers van elkaar en elk van hun was van plan
 om een huis te bouwen. Het jongste biggetje was lui en bouwde zijn huis van stro. De oudste was heel enthousiast en bouwde zijn huis van
 steen. De middelste vondt het een goed idee om zijn huis van hout te maken. Maar op een dag kwam er een wolf die maar al te graag een
-lekker biggetje voor onbijt luste. Hij kwam aan bij het huisje van stro en blies het zo omver. het jongste biggetje maakte dat ie weg kwam en
+lekker biggetje voor onbijt luste. Hij kwam aan bij het huisje van stro en blies het zo omver. Het jongste biggetje maakte dat ie weg kwam en
 rende zo snel mogelijk naar zijn broer toe. De wolf rende erachter aan en eenmaal bij het houten huis aangekomen, haalde hij diep adem en
 blies ook dat huisje omver. De biggetjes hadden geen andere keus en renden naar hun oudste broer toe in de hoop daar wel veilig te zijn. De
-wolf wilden de biggetjes niet kwijtraken dus ging op een lege maag achter hun aan. Toen de wolf bij het stenen huisje aankwam haalde hij
+wolf wilden de biggetjes niet kwijtraken dus ging op een lege maag achter hen aan. Toen de wolf bij het stenen huisje aankwam haalde hij
 weer diep adem en blies op volle kracht tegen het huis aan. Maar tot zijn verbazing viel het huisje niet om. Hij blies nog een keer maar
 nog steeds stond het huisje overeind. De wolf gaf niet op terwijl de drie biggetjes al ontsnapt waren. Wat er uiteindelijk met het huisje
-is gebeurd, dat, lieve kinderen, dat is weer een ander verhaal.</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+is gebeurd, dat is weer een ander verhaal.</string>
+    <string name="hansEnGrietjeTitel">Hans en Grietje</string>
+    <string name="hansEnGrietjeHulp">Hans en Grietje zijn verdwaald en staan op het moment voor een
+        enorm groot huis van koek, snoep en noem maar op wat voor lekkers. Ze willen maar al te
+        graag een paar van die snoepjes opeten, maar ze zien ook dat de heks er is die ze in de
+        gaten houdt. Jij kan ze helpen aan een volle maag door zoveel mogelijk snoepjes te pakken
+        wanneer de heks niet op let.</string>
+    <string name="hansEnGrietjeOpdracht">Help Hans en Grietje naar een volle maag door de knoppen van
+        de snoepjes in te drukken waar de heks niet naar kijkt. Als de heks naar een snoepje aan het
+        kijken is gaat het lampje dat erboven hangt branden. Lukt het jou om het hele huis op te
+        snoepen?</string>
+    <string name="hansEnGrietje">Er was eens een verhaal over een gezin dat best arm was. Het ging
+        over Hans en Grietje die samen met hun ouders in een oud huisje leefden. Uiteindelijk
+        besloten de ouders dat Hans en Grietje eten moesten gaan halen. Hans had door dat het
+        moeilijk was de weg terug te vinden en nam daarom kiezelstenen mee om een pad te vormen
+        uitkwam bij thuis. De volgende dag wilde Hans hetzelfde doen, maar hij gebruikte dit keer
+        broodkruimels in plaats van kiezelstenen. Toen ze weer naar huis wilden, kwamen ze erachter
+        dat alle broodkruimels opgegeten waren. Grietje zei dat ze maar moesten ronddwalen, want
+        stil blijven staan is ook geen optie. Na een tijdje in het bos te lopen, zien ze een huisje
+        van koek, snoep en nog meer lekkers. Ze konden zich niet inhouden en aten van het huisje,
+        maar toen kwam er iemand uit de voordeur lopen. Het was een oude vrouw die aardig over kwam
+        en een slaapplek aanbood voor de twee kinderen. Na een volle maag en een goede nachtrust
+        bleek de oude vrouw een heks te zijn en Hans was opgesloten in een kooi. De heks was van
+        plan om Hans te vet mesten maar Hans liet elke keer een botje in plaats van zijn vinger
+        zien, omdat de heks slecht ziend was. Na een paar dagen was de Heks er klaar mee en moest
+        Grietje het water opwarmen om hans in de soep te gooien. Maar Grietje deed net alsof ze niet
+        wist hoe de oven werkte dus toen de heks kwam kijken duwde grietje de heks in de oven.
+        Daarna bevrijdde ze Hans en namen goud en sieraden van de heks mee. Toen ze weer thuiskwamen
+        waren de ouders heel erg blij en ze hoeven nooit meer in armoede te leven.</string>
 
-    <string name="wolfEnBiggetjes">De wolf en de drie biggetjes</string>
+    <string name="tutorial1">Welkom bij de SprookTocht! In deze app ga je op avontuur door de
+        Essteling om alle sprookjes te helpen. Verzamel onderweg punten om een leuke prijs te kunnen
+        winnen. Lukt het jou om alle sprookjes in het park te helpen?</string>
+    <string name="tutorial2">Zometeen ben je bij het spel zelf, hier kun je verschillende dingen
+        doen. Op de plattegrond staan verschillende knoppen, dat zijn de verschillende puzzels die
+        je op moet lossen. Als je op de knop drukt en dan op meer info drukt kun je naar een scherm
+        gaan waar het probleem wordt uitgelegd. </string>
+    <string name="tutorial3">Boven de plattegrond staat er een trofee. Als je genoeg punten hebt
+        gehaald kun op deze trofee drukken om je prijs op te halen! Je kunt kiezen uit een gratis
+        snack bij je frietje, 20 % korting bij de souvenirwinkel of je mag bij 1 attractie de
+        wachtrij overslaan.</string>
+    <string name="tutorial4">Er is ook nog een knop met een vraagteken te vinden, je kunt op deze
+        knop drukken als je iets niet snapt, dan kom je weer terug bij deze tutorial. Als het dan
+        alsnog niet duidelijk is, vraag dan een van de medewerkers van het park om hulp!</string>
+    <string name="tutorial5">Als je eenmaal bij het spel aangekomen bent staat er een code die je
+        in moet voeren in je telefoon. Zodra je dit hebt gedaan kun je op de startknop drukken en
+        krijg je een uitleg van je opdracht. Doe de opdracht zo goed mogelijk en verdien zo veel
+        mogelijk punten hiermee!</string>
+    <string name="tutorial6">Er zijn bij elk spel verschillende moeilijkheidsniveaus, hoe moeilijker
+        het niveau, des te meer punten je kunt verdienen! Als je het spel klaar hebt krijg je alle
+        punten die je verdiend hebt op je telefoon staan, verzamel zo veel mogelijk punten om vette
+        prijzen te kunnen winnen!</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
 </resources>
