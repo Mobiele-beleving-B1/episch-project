@@ -41,7 +41,6 @@ public class MapActivity extends AppCompatActivity {
                     Intent intent = new Intent(getApplicationContext(), DetailActivity.class);
                     intent.putExtra("profile", MQTTProfile);
                     intent.putExtra("fairy_tale_info", selectedFairyTale);
-                    intent.putExtra("intent",getIntent());
                     startActivity(intent);
                 } catch (Exception e) {
                     Log.e("MyActivity::MyMethod", e.getMessage());
@@ -54,7 +53,6 @@ public class MapActivity extends AppCompatActivity {
                 try {
                     Intent intent = new Intent(getApplicationContext(), PrizeActivity.class);
                     intent.putExtra("prizeHandler", prizeHandler);
-                    intent.putExtra("intent",getIntent());
                     startActivity(intent);
                 } catch (Exception e) {
                     Log.e("MyActivity::MyMethod", e.getMessage());
