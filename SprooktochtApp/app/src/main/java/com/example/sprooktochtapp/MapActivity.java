@@ -27,7 +27,7 @@ public class MapActivity extends AppCompatActivity {
 
         MQTTProfile = (MQTTProfile) getIntent().getSerializableExtra("profile");
         prizeHandler = (PrizeHandler) getIntent().getSerializableExtra("prizeHandler");
-        prizeHandler.setPointsTotal(MQTTProfile.getPoints());
+        prizeHandler.setPointsGained(MQTTProfile.getPoints());
         this.buttonMap = new HashMap<>();
         TextView fairyTaleName = (TextView) findViewById(R.id.activeSprookje);
         fairyTaleName.setText("Kies een locatie");
@@ -53,6 +53,7 @@ public class MapActivity extends AppCompatActivity {
                 try {
                     Intent intent = new Intent(getApplicationContext(), PrizeActivity.class);
                     intent.putExtra("prizeHandler", prizeHandler);
+                    intent.putExtra("profile", MQTTProfile);
                     startActivity(intent);
                 } catch (Exception e) {
                     Log.e("MyActivity::MyMethod", e.getMessage());

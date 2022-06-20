@@ -13,15 +13,18 @@ public class PrizeActivity extends AppCompatActivity {
     Button claimGiftShopButton, claimSnackButton, claimPriorityPassButton;
     String couponString;
     TextView prizeTitle, prizeDesc, couponList, pointsText, snackDesc, giftShopDesc, priorityPassDesc, snackPrizeTitle, priorityPassTitle;
-
+MQTTProfile profile;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_prize);
         int pointsRequired = 300;
+        //prizeHandler.setPointsTotal(pointsRequired + 100);
         giftShopDesc = (TextView) findViewById(R.id.giftShopPrizeDesc);
         priorityPassDesc = (TextView) findViewById(R.id.priorityPassPrizeDesc);
         prizeHandler = (PrizeHandler) getIntent().getSerializableExtra("prizeHandler");
+        profile = (MQTTProfile) getIntent().getSerializableExtra("profile");
+        prizeHandler.setPointsGained(profile.getPoints());
         snackDesc = (TextView) findViewById(R.id.snackPrizeDesc);
         couponList = (TextView) findViewById(R.id.couponTextView);
         pointsText = (TextView) findViewById(R.id.pointsText);
@@ -35,6 +38,7 @@ public class PrizeActivity extends AppCompatActivity {
         snackDesc.setText("Een gratis snack bij uw zak friet die u kan aanschaffen bij een van onze smulkramen!\nPrijs: "  + pointsRequired);
         priorityPassDesc.setText("Hiermee kan u bij een balie een pas verzilveren waarmee u bij 2 attracties niet hoeft te wachten in de rij!\nPrijs: " + pointsRequired);
         prizeTitle.setText("Coupon winkel");
+        update();
         claimSnackButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -94,6 +98,7 @@ public class PrizeActivity extends AppCompatActivity {
 
     private void update() {
         pointsText.setText("Jouw puntend: " + prizeHandler.getPointsGained() + "/" + prizeHandler.getPointsTotal());
+        profile.setPoints(prizeHandler.getPointsGained());
     }
 
 }

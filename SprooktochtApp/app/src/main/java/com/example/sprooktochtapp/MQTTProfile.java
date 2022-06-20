@@ -1,10 +1,16 @@
 package com.example.sprooktochtapp;
 
 
+
+import android.os.Environment;
 import android.util.Log;
 
 import org.eclipse.paho.client.mqttv3.MqttClient;
 
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.Serializable;
@@ -24,7 +30,7 @@ public class MQTTProfile implements MQTTCallBack {
     private String id;
     private final String mainTopic = "avanstibreda/ti/1.4/B1/sprookTocht/";
     private HashMap<String, Double> games = new HashMap<>();
-    private static long points;
+    private static double points;
     private HashMap<String, String> data;
 
 
@@ -44,6 +50,9 @@ public class MQTTProfile implements MQTTCallBack {
         return data.keySet();
     }
 
+    public void setPoints(double points) {
+        MQTTProfile.points = points;
+    }
 
     private void gameData(String gameName, String dataType, String data) {
         if (dataType.equals("Score") && data.startsWith(id)) {
@@ -52,16 +61,12 @@ public class MQTTProfile implements MQTTCallBack {
                 Log.d("mqtt", game);
                 if (game.equals(gameName)) {
                     points += score * games.get(game);
-                    savePoint(points);
                     Log.d("MQTT","Total points: "+points);
                 }
             }
         }
     }
 
-    private void savePoint(long points) {
-
-    }
 
     private void checkForAchievements(JsonObject game, int score) {
 
@@ -71,7 +76,7 @@ public class MQTTProfile implements MQTTCallBack {
         return id;
     }
 
-    public long getPoints() {
+    public double getPoints() {
         return points;
     }
 

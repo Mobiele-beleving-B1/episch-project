@@ -173,7 +173,7 @@ public class TutorialActivity extends FragmentActivity {
                 public void onClick(View view) {
                     Intent intent = new Intent(TutorialActivity.this, MapActivity.class);
                     intent.putExtra("profile",MQTTProfile);
-                    intent.putExtra("prizeHandler",new PrizeHandler(900, 300));
+                    intent.putExtra("prizeHandler",new PrizeHandler(0, 300));
                     startActivity(intent);
                     popupWindow.dismiss();
                 }

@@ -39,7 +39,6 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
     private MqttAndroidClient client;
     private HashMap<String, String> data;
     private final String mainTopic = "avanstibreda/ti/1.4/B1/sprookTocht/";
-    private ArrayList<MQTTCallBack> callbacks;
 
     @RequiresApi(api = Build.VERSION_CODES.N)
     @Override
@@ -47,10 +46,7 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
         super.onCreate(savedInstanceState);
         data = new HashMap<>();
         setContentView(R.layout.activity_detail);
-        callbacks = new ArrayList<>();
         MQTTProfile = (MQTTProfile) getIntent().getSerializableExtra("profile");
-
-        callbacks.add(MQTTProfile);
         Intent intent = getIntent();
         String fairyTaleInfo = intent.getStringExtra("fairy_tale_info");
         this.selectedFairyTale = FairyTaleManager.getFairyTale(fairyTaleInfo);
@@ -91,11 +87,11 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
         fairyTaleName = (TextView) findViewById(R.id.fairyTaleName);
         gameDescription = (TextView) findViewById(R.id.fairyTaleDescription);
 
-                findViewById(R.id.fairyTaleName);
+        findViewById(R.id.fairyTaleName);
 
 //        fairyTaleDescription = (TextView)
 
-                findViewById(R.id.fairyTaleDescription);
+        findViewById(R.id.fairyTaleDescription);
 
         fairyTaleImage = (ImageView)
 
@@ -121,13 +117,11 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
 
             @Override
             public void messageArrived(String topic, MqttMessage message) throws Exception {
-                Log.d("MQTT", topic + ","+ message);
+                Log.d("MQTT", topic + "," + message);
                 if (data.containsKey(topic)) {
                     String text = message.toString();
                     data.put(topic, text);
-                    for (MQTTCallBack callback : callbacks) {
-                        callback.receive(topic, text);
-                    }
+                    MQTTProfile.receive(topic,text);
                 }
             }
 
@@ -151,6 +145,9 @@ public class DetailActivity extends AppCompatActivity implements MQTTService {
     @Override
     protected void onDestroy() {
         super.onDestroy();
+        for (String s : data.keySet()) {
+            unsubscribe(s);
+        }
         client.close();
     }
 
